@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		200EE181AAE99268EEBC9406 /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */; };
+		A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */; };
+		A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */; };
+		A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC73F247290B6009CE4DA /* GSBannerView.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
 		DE98315C246336C000599581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* ViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* Begin PBXFileReference section */
 		2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C351D2FE81670C42DFE03A /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
+		A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftShopViewController.swift; sourceTree = "<group>"; };
+		A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSegmentControl.swift; sourceTree = "<group>"; };
+		A65FC73F247290B6009CE4DA /* GSBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBannerView.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE98315B246336C000599581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A637153B246BE66200BA74C8 /* GiftShop */ = {
+			isa = PBXGroup;
+			children = (
+				A637153E246BEC8000BA74C8 /* Model */,
+				A637153C246BE66800BA74C8 /* Views */,
+				A637153F246BEC8700BA74C8 /* Controller */,
+			);
+			path = GiftShop;
+			sourceTree = "<group>";
+		};
+		A637153C246BE66800BA74C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */,
+				A65FC73F247290B6009CE4DA /* GSBannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A637153E246BEC8000BA74C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A637153F246BEC8700BA74C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DE98314B246336C000599581 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +113,7 @@
 				DE983160246336C000599581 /* Assets.xcassets */,
 				DE983162246336C000599581 /* LaunchScreen.storyboard */,
 				DE983165246336C000599581 /* Info.plist */,
+				A637153B246BE66200BA74C8 /* GiftShop */,
 			);
 			path = StarbucksClone;
 			sourceTree = "<group>";
@@ -199,8 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
 				DE98315C246336C000599581 /* ViewController.swift in Sources */,
+				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
+				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
