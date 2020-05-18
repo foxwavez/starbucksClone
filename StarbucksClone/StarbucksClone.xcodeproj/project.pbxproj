@@ -11,6 +11,7 @@
 		A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */; };
 		A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */; };
 		A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC73F247290B6009CE4DA /* GSBannerView.swift */; };
+		A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74124729884009CE4DA /* GSTagButtonsView.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
 		DE98315C246336C000599581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* ViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftShopViewController.swift; sourceTree = "<group>"; };
 		A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSegmentControl.swift; sourceTree = "<group>"; };
 		A65FC73F247290B6009CE4DA /* GSBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBannerView.swift; sourceTree = "<group>"; };
+		A65FC74124729884009CE4DA /* GSTagButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTagButtonsView.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE98315B246336C000599581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */,
 				A65FC73F247290B6009CE4DA /* GSBannerView.swift */,
+				A65FC74124729884009CE4DA /* GSTagButtonsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
 				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
+				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
