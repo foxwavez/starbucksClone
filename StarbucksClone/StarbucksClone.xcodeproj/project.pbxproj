@@ -12,6 +12,9 @@
 		A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */; };
 		A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC73F247290B6009CE4DA /* GSBannerView.swift */; };
 		A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74124729884009CE4DA /* GSTagButtonsView.swift */; };
+		A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */; };
+		A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */; };
+		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
 		DE98315C246336C000599581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* ViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSegmentControl.swift; sourceTree = "<group>"; };
 		A65FC73F247290B6009CE4DA /* GSBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBannerView.swift; sourceTree = "<group>"; };
 		A65FC74124729884009CE4DA /* GSTagButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTagButtonsView.swift; sourceTree = "<group>"; };
+		A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCollectionStyleView.swift; sourceTree = "<group>"; };
+		A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBestNewCollectionCell.swift; sourceTree = "<group>"; };
+		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE98315B246336C000599581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,9 +74,11 @@
 		A637153C246BE66800BA74C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A65FC7472473F43C009CE4DA /* Cells */,
 				A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */,
 				A65FC73F247290B6009CE4DA /* GSBannerView.swift */,
 				A65FC74124729884009CE4DA /* GSTagButtonsView.swift */,
+				A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,6 +96,15 @@
 				A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A65FC7472473F43C009CE4DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */,
+				A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DE98314B246336C000599581 = {
@@ -247,7 +264,10 @@
 				DE98315C246336C000599581 /* ViewController.swift in Sources */,
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
+				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
 				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
+				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
+				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
 				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
