@@ -25,6 +25,7 @@ class GSCollectionStyleView: UIView {
     if items.count == 3 {
       $0.scrollDirection = .vertical
       $0.minimumLineSpacing = 10
+      $0.itemSize = CGSize(width: UIScreen.main.bounds.width-16-16, height: 100)
     } else {
       $0.scrollDirection = .horizontal
       $0.minimumLineSpacing = 12
@@ -43,9 +44,9 @@ class GSCollectionStyleView: UIView {
     }
   }
   
-  private let items: [[UIImage: String]]
-
-  init(items: [[UIImage: String]], title: String, subtitle: String) {
+  private let items: [Any]
+  
+  init(items: [Any], title: String, subtitle: String) {
     self.items = items
     super.init(frame: .zero)
     titleLabel.text = title
@@ -93,10 +94,19 @@ extension GSCollectionStyleView: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? GSBestNewCollectionCell {
-      cell.setItem(items[indexPath.row])
+      if let item = items[indexPath.row] as? [UIImage: String] {
+        cell.setItem(item)
+      } else {
+        cell.setItem([UIImage(named: "test")!: "찾을 수 없습니다"])
+      }
       return cell
     } else {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? GSThemeCollectionCell else { return UICollectionViewCell() }
+      if let item = items[indexPath.row] as? UIImage {
+        cell.setItem(item)
+      } else {
+        cell.setItem(UIImage(named: "test")!)
+      }
       return cell
     }
   }

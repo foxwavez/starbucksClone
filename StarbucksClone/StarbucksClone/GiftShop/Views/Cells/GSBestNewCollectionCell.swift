@@ -9,7 +9,6 @@
 import UIKit
 
 class GSBestNewCollectionCell: UICollectionViewCell {
-  
   // MARK: Interface
   func setItem(_ item: [UIImage: String]) {
     for (key, value) in item {
@@ -17,8 +16,6 @@ class GSBestNewCollectionCell: UICollectionViewCell {
       nameLabel.text =  value
     }
   }
-  
-  static let id = "GSBestNewCollectionCell"
   
   private let imageView = UIImageView().then {
     $0.layer.cornerRadius = 4
@@ -48,7 +45,7 @@ class GSBestNewCollectionCell: UICollectionViewCell {
   }
   
   private func setupAttributes() {
-    contentView.backgroundColor = .white
+    contentView.backgroundColor = .green
     contentView.addSubview(imageView)
     contentView.addSubview(nameLabel)
   }
