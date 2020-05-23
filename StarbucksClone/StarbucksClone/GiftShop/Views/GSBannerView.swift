@@ -40,6 +40,7 @@ class GSBannerView: UIScrollView {
   private func setupUI() {
     setupAttributes()
     setupConstraints()
+    autoScroll()
   }
   
   private func setupAttributes() {

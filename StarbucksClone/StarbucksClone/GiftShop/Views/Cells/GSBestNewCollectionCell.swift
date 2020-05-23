@@ -45,7 +45,6 @@ class GSBestNewCollectionCell: UICollectionViewCell {
   }
   
   private func setupAttributes() {
-    contentView.backgroundColor = .green
     contentView.addSubview(imageView)
     contentView.addSubview(nameLabel)
   }

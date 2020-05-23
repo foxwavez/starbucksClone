@@ -15,6 +15,7 @@
 		A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */; };
 		A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */; };
 		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
+		A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74C24764B73009CE4DA /* GSHomeView.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
 		DE98315C246336C000599581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* ViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCollectionStyleView.swift; sourceTree = "<group>"; };
 		A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBestNewCollectionCell.swift; sourceTree = "<group>"; };
 		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
+		A65FC74C24764B73009CE4DA /* GSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeView.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE98315B246336C000599581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A65FC73F247290B6009CE4DA /* GSBannerView.swift */,
 				A65FC74124729884009CE4DA /* GSTagButtonsView.swift */,
 				A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */,
+				A65FC74C24764B73009CE4DA /* GSHomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
 				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
 				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
+				A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */,
 				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
 				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
 			);
@@ -406,7 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q66WJKW45F;
+				DEVELOPMENT_TEAM = G63629C67V;
 				INFOPLIST_FILE = StarbucksClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q66WJKW45F;
+				DEVELOPMENT_TEAM = G63629C67V;
 				INFOPLIST_FILE = StarbucksClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
