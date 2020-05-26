@@ -26,6 +26,7 @@ class ViewController: UIViewController {
   
   private func setupNavigation() {
     self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo_starbucks"))
+    self.navigationItem.titleView?.contentMode = .scaleAspectFit
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "line.horizontal.3"), style: .done, target: self, action: #selector(didTapNavigtionButton))
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapNavigtionButton))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
