@@ -21,11 +21,12 @@ class MainViewController: UIViewController {
   }
   
   private func setupUI() {
-    view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
+    view.backgroundColor = #colorLiteral(red: 0.09411764706, green: 0.09411764706, blue: 0.09411764706, alpha: 1)
   }
   
   private func setupNavigation() {
-    self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo_starbucks"))
+    let logoImage: String = "logo_starbucks"
+    self.navigationItem.titleView = UIImageView(image: UIImage(named: logoImage))
     self.navigationItem.titleView?.contentMode = .scaleAspectFit
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "line.horizontal.3"), style: .done, target: self, action: #selector(didTapNavigtionButton))
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapNavigtionButton))
