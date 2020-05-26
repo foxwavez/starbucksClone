@@ -20,18 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let VC = UINavigationController(rootViewController: ViewController())
+    let mainVC = UINavigationController(rootViewController: MainViewController())
     
-    VC.navigationBar.barStyle = .black
-    VC.navigationBar.backgroundColor = .black
-    VC.navigationBar.tintColor = .white
-    VC.navigationBar.isTranslucent = false
-    VC.navigationBar.titleTextAttributes = [
+    mainVC.navigationBar.barStyle = .black
+    mainVC.navigationBar.backgroundColor = .black
+    mainVC.navigationBar.tintColor = .white
+    mainVC.navigationBar.isTranslucent = false
+    mainVC.navigationBar.titleTextAttributes = [
         .foregroundColor: UIColor.white,
         
     ]
     
-    window?.rootViewController = VC
+    window?.rootViewController = mainVC
     window?.makeKeyAndVisible()
     
     return true
