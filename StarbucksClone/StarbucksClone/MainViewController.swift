@@ -28,12 +28,15 @@ class MainViewController: UIViewController {
     let logoImage: String = "logo_starbucks"
     self.navigationItem.titleView = UIImageView(image: UIImage(named: logoImage))
     self.navigationItem.titleView?.contentMode = .scaleAspectFit
-    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "line.horizontal.3"), style: .done, target: self, action: #selector(didTapNavigtionButton))
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapNavigtionButton))
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "line.horizontal.3"), style: .done, target: self, action: #selector(didTapLeftBarButton(sender:)))
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapRightBarbutton(sender:)))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
   }
-  @objc private func didTapNavigtionButton(sender: UIButton) {
+  @objc private func didTapLeftBarButton(sender: UIBarButtonItem) {
     self.navigationController?.pushViewController(MenuViewController(), animated: true)
+  }
+  @objc private func didTapRightBarbutton(sender: UIBarButtonItem) {
+    self.navigationController?.pushViewController(NotificationViewController(), animated: true)
   }
 }
 
