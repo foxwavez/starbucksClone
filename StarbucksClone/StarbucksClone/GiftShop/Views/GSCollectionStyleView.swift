@@ -29,7 +29,7 @@ class GSCollectionStyleView: UIView {
     } else {
       $0.scrollDirection = .horizontal
       $0.minimumLineSpacing = 12
-      $0.itemSize = CGSize(width: 120, height: 168)
+      $0.itemSize = CGSize(width: 120, height: 164)
     }
   }
   
