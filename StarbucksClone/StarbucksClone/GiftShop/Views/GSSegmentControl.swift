@@ -40,12 +40,6 @@ class GSSegmentControll: UIView {
     [menuViews, selectLine, contentViews].forEach { self.addSubview($0) }
     setupConstraints()
     makeButtonAndView(contents)
-    //    contents.forEach {
-    //      for (key, value) in $0 {
-    //        makeButtonAndView(key, value)
-    //      }
-    //    }
-    
     if let firstButton = menuViews.arrangedSubviews[0] as? UIButton {
       firstButton.isSelected = true
     }
@@ -60,11 +54,12 @@ class GSSegmentControll: UIView {
       $0.width.equalTo(menuViews.snp.width).dividedBy(3)
       $0.bottom.equalTo(menuViews.snp.bottom)
       $0.leading.equalTo(menuViews.snp.leading)
-      $0.height.equalTo(1)
+      $0.height.equalTo(2)
     }
     contentViews.snp.makeConstraints {
       $0.top.equalTo(menuViews.snp.bottom)
-      $0.leading.trailing.bottom.equalToSuperview()
+      $0.leading.equalTo(menuViews.snp.leading)
+      $0.trailing.bottom.equalToSuperview()
       $0.width.equalToSuperview()
       $0.height.equalTo(UIScreen.main.bounds.height - 56)
     }
@@ -78,6 +73,7 @@ class GSSegmentControll: UIView {
           button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
           button.setTitleColor(#colorLiteral(red: 0.6117647059, green: 0.5333333333, blue: 0.337254902, alpha: 1), for: .selected)
           button.setTitleColor(#colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1), for: .normal)
+          button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
           menuViews.addArrangedSubview(button)
         }
         addView.do { v in
@@ -99,17 +95,27 @@ class GSSegmentControll: UIView {
     }
   }
   
-    private func makeMenuButton(_ title: String) -> UIButton {
-  //    return UIButton().then {
-  //      $0.setTitle(title, for: .normal)
-  //      $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-  //      $0.setTitleColor(#colorLiteral(red: 0.6117647059, green: 0.5333333333, blue: 0.337254902, alpha: 1), for: .selected)
-  //      $0.setTitleColor(#colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1), for: .normal)
-  //    }
-      return UIButton()
+  @objc private func didTapButton(_ sender: UIButton) {
+    guard let idx = menuViews.subviews.firstIndex(of: sender) else { return }
+    UIView.animate(withDuration: 0.3) {
+      self.selectLine.snp.updateConstraints {
+        $0.leading.equalTo(self.menuViews.snp.leading).offset(sender.bounds.width * CGFloat(idx))
+      }
+      self.contentViews.contentOffset.x = self.contentViews.bounds.width * CGFloat(idx)
+      self.layoutIfNeeded()
     }
+  }
 }
 
 extension GSSegmentControll: UIScrollViewDelegate {
-  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    UIView.animate(withDuration: 0.3) {
+      self.selectLine.snp.updateConstraints {
+        $0.leading.equalTo(self.menuViews.snp.leading).offset(
+          scrollView.contentOffset.x/CGFloat(self.menuViews.subviews.count)
+        )
+      }
+      self.layoutIfNeeded()
+    }
+  }
 }
