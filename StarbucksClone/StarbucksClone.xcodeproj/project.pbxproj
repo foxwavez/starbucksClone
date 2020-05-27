@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		200EE181AAE99268EEBC9406 /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */; };
+		70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0C247EB0F200E106EA /* MenuViewController.swift */; };
+		70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
-		DE98315C246336C000599581 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* ViewController.swift */; };
+		DE98315C246336C000599581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* MainViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
 		DE983164246336C000599581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE983162246336C000599581 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -17,9 +19,11 @@
 /* Begin PBXFileReference section */
 		2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C351D2FE81670C42DFE03A /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
+		70EF7A0C247EB0F200E106EA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE98315B246336C000599581 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE98315B246336C000599581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE983160246336C000599581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE983163246336C000599581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE983165246336C000599581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				DE983157246336C000599581 /* AppDelegate.swift */,
-				DE98315B246336C000599581 /* ViewController.swift */,
+				DE98315B246336C000599581 /* MainViewController.swift */,
+				70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */,
+				70EF7A0C247EB0F200E106EA /* MenuViewController.swift */,
 				DE983160246336C000599581 /* Assets.xcassets */,
 				DE983162246336C000599581 /* LaunchScreen.storyboard */,
 				DE983165246336C000599581 /* Info.plist */,
@@ -199,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE98315C246336C000599581 /* ViewController.swift in Sources */,
+				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
+				70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */,
+				70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
