@@ -32,8 +32,8 @@ class MainViewController: UIViewController {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapNavigtionButton))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
   }
-  @objc private func didTapNavigtionButton() {
-    
+  @objc private func didTapNavigtionButton(sender: UIButton) {
+    self.navigationController?.pushViewController(MenuViewController(), animated: true)
   }
 }
 
