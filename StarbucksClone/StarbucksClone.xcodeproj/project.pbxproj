@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		200EE181AAE99268EEBC9406 /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */; };
+		A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */; };
+		A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */; };
+		A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC73F247290B6009CE4DA /* GSBannerView.swift */; };
+		A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74124729884009CE4DA /* GSTagButtonsView.swift */; };
+		A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */; };
+		A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */; };
+		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
+		A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74C24764B73009CE4DA /* GSHomeView.swift */; };
 		70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0C247EB0F200E106EA /* MenuViewController.swift */; };
 		70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
@@ -19,6 +27,14 @@
 /* Begin PBXFileReference section */
 		2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C351D2FE81670C42DFE03A /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
+		A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftShopViewController.swift; sourceTree = "<group>"; };
+		A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSegmentControl.swift; sourceTree = "<group>"; };
+		A65FC73F247290B6009CE4DA /* GSBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBannerView.swift; sourceTree = "<group>"; };
+		A65FC74124729884009CE4DA /* GSTagButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTagButtonsView.swift; sourceTree = "<group>"; };
+		A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCollectionStyleView.swift; sourceTree = "<group>"; };
+		A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBestNewCollectionCell.swift; sourceTree = "<group>"; };
+		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
+		A65FC74C24764B73009CE4DA /* GSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeView.swift; sourceTree = "<group>"; };
 		70EF7A0C247EB0F200E106EA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +67,53 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A637153B246BE66200BA74C8 /* GiftShop */ = {
+			isa = PBXGroup;
+			children = (
+				A637153E246BEC8000BA74C8 /* Model */,
+				A637153C246BE66800BA74C8 /* Views */,
+				A637153F246BEC8700BA74C8 /* Controller */,
+			);
+			path = GiftShop;
+			sourceTree = "<group>";
+		};
+		A637153C246BE66800BA74C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A65FC7472473F43C009CE4DA /* Cells */,
+				A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */,
+				A65FC73F247290B6009CE4DA /* GSBannerView.swift */,
+				A65FC74124729884009CE4DA /* GSTagButtonsView.swift */,
+				A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */,
+				A65FC74C24764B73009CE4DA /* GSHomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A637153E246BEC8000BA74C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A637153F246BEC8700BA74C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A65FC7472473F43C009CE4DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */,
+				A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DE98314B246336C000599581 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +142,7 @@
 				DE983160246336C000599581 /* Assets.xcassets */,
 				DE983162246336C000599581 /* LaunchScreen.storyboard */,
 				DE983165246336C000599581 /* Info.plist */,
+				A637153B246BE66200BA74C8 /* GiftShop */,
 			);
 			path = StarbucksClone;
 			sourceTree = "<group>";
@@ -205,10 +269,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
+				DE98315C246336C000599581 /* ViewController.swift in Sources */,
+				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
 				70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */,
 				70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
+				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
+				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
+				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
+				A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */,
+				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
+				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q66WJKW45F;
+				DEVELOPMENT_TEAM = G63629C67V;
 				INFOPLIST_FILE = StarbucksClone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -366,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q66WJKW45F;
+				DEVELOPMENT_TEAM = G63629C67V;
 				INFOPLIST_FILE = StarbucksClone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
