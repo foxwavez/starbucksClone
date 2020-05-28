@@ -16,6 +16,8 @@
 		A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */; };
 		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
 		A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74C24764B73009CE4DA /* GSHomeView.swift */; };
+		A6D96619247F81130066FFCB /* GSCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D96618247F81130066FFCB /* GSCategoryView.swift */; };
+		A6D9661B247F884E0066FFCB /* GSCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */; };
 		70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0C247EB0F200E106EA /* MenuViewController.swift */; };
 		70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 		A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSBestNewCollectionCell.swift; sourceTree = "<group>"; };
 		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
 		A65FC74C24764B73009CE4DA /* GSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeView.swift; sourceTree = "<group>"; };
+		A6D96618247F81130066FFCB /* GSCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryView.swift; sourceTree = "<group>"; };
+		A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		70EF7A0C247EB0F200E106EA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +90,7 @@
 				A65FC74124729884009CE4DA /* GSTagButtonsView.swift */,
 				A65FC7452472E806009CE4DA /* GSCollectionStyleView.swift */,
 				A65FC74C24764B73009CE4DA /* GSHomeView.swift */,
+				A6D96618247F81130066FFCB /* GSCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			children = (
 				A65FC7482473F4A6009CE4DA /* GSBestNewCollectionCell.swift */,
 				A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */,
+				A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
 				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
+				A6D9661B247F884E0066FFCB /* GSCategoryCollectionCell.swift in Sources */,
+				A6D96619247F81130066FFCB /* GSCategoryView.swift in Sources */,
 				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
 				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
 				A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */,
