@@ -14,14 +14,25 @@ import SnapKit
 
 class MainViewController: UIViewController {
   
+  private let welcomeLabel = UILabel().then {
+    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    $0.textColor = .white
+    $0.text = "안녕하세요. 스타벅스입니다."
+    $0.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
     setupNavigation()
+    setupLayout()
   }
   
   private func setupUI() {
-    view.backgroundColor = #colorLiteral(red: 0.09411764706, green: 0.09411764706, blue: 0.09411764706, alpha: 1)
+    view.backgroundColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1)
+    [welcomeLabel].forEach {
+      view.addSubview($0)
+    }
   }
   
   private func setupNavigation() {
@@ -32,6 +43,15 @@ class MainViewController: UIViewController {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bell"), style: .done, target: self, action: #selector(didTapRightBarbutton(sender:)))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
   }
+  
+  private func setupLayout(){
+    let guide = view.safeAreaLayoutGuide
+    welcomeLabel.snp.makeConstraints {
+      $0.centerX.equalTo(guide)
+      $0.centerY.equalTo(guide)
+    }
+  }
+  
   @objc private func didTapLeftBarButton(sender: UIBarButtonItem) {
     self.navigationController?.pushViewController(MenuViewController(), animated: true)
   }
