@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     $0.textColor = .white
     $0.text = "안녕하세요. 스타벅스입니다."
     $0.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
+    $0.textAlignment = .center
   }
   
   override func viewDidLoad() {
@@ -47,8 +48,10 @@ class MainViewController: UIViewController {
   private func setupLayout(){
     let guide = view.safeAreaLayoutGuide
     welcomeLabel.snp.makeConstraints {
+      $0.top.equalTo(guide)
+      $0.width.equalTo(guide)
+      $0.height.equalTo(guide).multipliedBy(0.05)
       $0.centerX.equalTo(guide)
-      $0.centerY.equalTo(guide)
     }
   }
   
