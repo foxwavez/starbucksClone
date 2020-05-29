@@ -35,6 +35,12 @@ class GSSegmentControll: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  override func layoutSubviews() {
+    contentViews.snp.makeConstraints {
+      $0.height.equalTo(self.bounds.height - 56)
+    }
+  }
+  
   private func setupUI(_ contents: [[String: UIView]]) {
     self.backgroundColor = .white
     [menuViews, selectLine, contentViews].forEach { self.addSubview($0) }
@@ -61,7 +67,6 @@ class GSSegmentControll: UIView {
       $0.leading.equalTo(menuViews.snp.leading)
       $0.trailing.bottom.equalToSuperview()
       $0.width.equalToSuperview()
-      $0.height.equalTo(UIScreen.main.bounds.height - 56)
     }
   }
   
