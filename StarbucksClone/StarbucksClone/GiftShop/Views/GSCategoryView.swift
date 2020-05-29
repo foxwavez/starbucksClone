@@ -106,18 +106,32 @@ class GSCategoryView: UIView {
         $0.setTitleColor(.black, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 16)
         $0.layer.cornerRadius = 16
-        $0.backgroundColor = .lightGray
         $0.tag = idx
         $0.addTarget(self, action: #selector(didTabTagButton(_:)), for: .touchUpInside)
         stackView.addArrangedSubview($0)
       }
     }
+    if let button = stackView.arrangedSubviews[0] as? UIButton {
+      button.seletedBackgroudColor(true)
+    }
   }
   
   @objc private func didTabTagButton(_ sender: UIButton) {
+    guard let stackView = categoryScrollView.subviews[0] as? UIStackView else { return }
+    stackView.arrangedSubviews.forEach {
+      if let button = $0 as? UIButton {
+        button.tag == sender.tag ? button.seletedBackgroudColor(true) : button.seletedBackgroudColor(false)
+      }
+    }
+    
     UIView.animate(withDuration: 0.3) {
       let page = IndexPath.init(item: sender.tag, section: 0)
       self.collectionView.scrollToItem(at: page, at: .centeredHorizontally, animated: true)
+      if self.categoryScrollView.contentOffset.x < stackView.bounds.width - self.collectionView.bounds.width {
+        if (CGFloat(sender.tag) * sender.bounds.width) < stackView.bounds.width - self.collectionView.bounds.width {
+          self.categoryScrollView.contentOffset.x = (CGFloat(sender.tag) * sender.bounds.width)
+        }
+      }
     }
     self.layoutIfNeeded()
   }
@@ -135,12 +149,12 @@ extension GSCategoryView: UICollectionViewDataSource {
 }
 
 extension GSCategoryView: UICollectionViewDelegate {
-//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//    if scrollView.contentOffset.x > 0 {
-//      let idx = Int(collectionView.bounds.width / scrollView.contentOffset.x)
-//      guard let stackView = categoryScrollView.subviews[0] as? UIStackView,
-//        let button = stackView.arrangedSubviews[idx] as? UIButton else { return }
-//      print(button.tag)
-//    }
-//  }
+  //  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  //    if scrollView.contentOffset.x > 0 {
+  //      let idx = Int(collectionView.bounds.width / scrollView.contentOffset.x)
+  //      guard let stackView = categoryScrollView.subviews[0] as? UIStackView,
+  //        let button = stackView.arrangedSubviews[idx] as? UIButton else { return }
+  //      print(button.tag)
+  //    }
+  //  }
 }

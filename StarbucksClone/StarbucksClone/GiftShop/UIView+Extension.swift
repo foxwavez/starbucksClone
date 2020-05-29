@@ -28,8 +28,12 @@ extension UIView {
   }
 }
 
-extension UICollectionViewCell {
-  var collectionView: UICollectionView? {
-    return parentView(of: UICollectionView.self)
+extension UIButton {
+  func seletedBackgroudColor(_ seleted: Bool) {
+    if seleted {
+      self.backgroundColor = .red
+    } else {
+      self.backgroundColor = .white
+    }
   }
 }
