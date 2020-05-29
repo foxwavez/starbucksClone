@@ -22,7 +22,9 @@ class GSCategoryView: UIView {
   // 카테고리 리스트
   // 리스트에 따른 리스트
   
-  private lazy var categoryScrollView = UIScrollView()
+  private lazy var categoryScrollView = UIScrollView().then {
+    $0.showsHorizontalScrollIndicator = false
+  }
   
   private lazy var layout = UICollectionViewFlowLayout().then {
     $0.scrollDirection = .horizontal
@@ -33,9 +35,11 @@ class GSCategoryView: UIView {
   
   private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
     $0.dataSource = self
+    $0.delegate = self
     $0.register(GSCategoryCollectionCell.self, forCellWithReuseIdentifier: GSCategoryCollectionCell.id)
     $0.isPagingEnabled = true
     $0.backgroundColor = .white
+    $0.showsHorizontalScrollIndicator = false
   }
   
   private let categoryList: [String]
@@ -96,16 +100,26 @@ class GSCategoryView: UIView {
     stackView.snp.makeConstraints {
       $0.edges.height.equalToSuperview()
     }
-    for str in list {
+    for idx in 0..<list.count {
       UIButton().do {
-        $0.setTitle("  \(str)  ", for: .normal)
+        $0.setTitle("  \(list[idx])  ", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 16)
-        stackView.addArrangedSubview($0)
         $0.layer.cornerRadius = 16
         $0.backgroundColor = .lightGray
+        $0.tag = idx
+        $0.addTarget(self, action: #selector(didTabTagButton(_:)), for: .touchUpInside)
+        stackView.addArrangedSubview($0)
       }
     }
+  }
+  
+  @objc private func didTabTagButton(_ sender: UIButton) {
+    UIView.animate(withDuration: 0.3) {
+      let page = IndexPath.init(item: sender.tag, section: 0)
+      self.collectionView.scrollToItem(at: page, at: .centeredHorizontally, animated: true)
+    }
+    self.layoutIfNeeded()
   }
 }
 
@@ -118,4 +132,15 @@ extension GSCategoryView: UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GSCategoryCollectionCell.id, for: indexPath)
     return cell
   }
+}
+
+extension GSCategoryView: UICollectionViewDelegate {
+//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//    if scrollView.contentOffset.x > 0 {
+//      let idx = Int(collectionView.bounds.width / scrollView.contentOffset.x)
+//      guard let stackView = categoryScrollView.subviews[0] as? UIStackView,
+//        let button = stackView.arrangedSubviews[idx] as? UIButton else { return }
+//      print(button.tag)
+//    }
+//  }
 }
