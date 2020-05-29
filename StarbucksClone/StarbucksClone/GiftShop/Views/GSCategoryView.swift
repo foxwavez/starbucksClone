@@ -9,13 +9,13 @@
 import UIKit
 
 struct GSCategoryItem: Decodable {
-  var image: URL
+  var image: URL?
   var title: String
   var price: String
 }
 
 class GSCategoryView: UIView {
- 
+  
   // 상단 스크롤 뷰
   // 컬렉션 뷰 안에 컬렉션 뷰
   
@@ -29,12 +29,13 @@ class GSCategoryView: UIView {
     $0.minimumInteritemSpacing = 0
     $0.minimumLineSpacing = 0
     $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    $0.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
   }
   
-  private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
+  private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
     $0.dataSource = self
-    $0.register(GSCategoryCollectionCell.self, forCellWithReuseIdentifier: "cell")
+    $0.register(GSCategoryCollectionCell.self, forCellWithReuseIdentifier: GSCategoryCollectionCell.id)
+    $0.isPagingEnabled = true
+    $0.backgroundColor = .white
   }
   
   private let categoryList: [String]
@@ -47,6 +48,13 @@ class GSCategoryView: UIView {
     setupUI()
   }
   
+  override func layoutSubviews() {
+    layout.itemSize = CGSize(width: self.bounds.width,
+                             height: self.bounds.height
+                              - GSViewSize.shared.segementHeight
+                              - categoryScrollView.bounds.height)
+  }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -54,15 +62,50 @@ class GSCategoryView: UIView {
   private func setupUI() {
     setupAttributes()
     setupConstraints()
-    collectionView.collectionViewLayout = layout
+    makeCategoryButton(categoryList)
   }
   
   private func setupAttributes() {
-    [categoryScrollView, collectionView].forEach { self.addSubview($0) }
+    [categoryScrollView, collectionView].forEach {
+      $0.backgroundColor = .white
+      self.addSubview($0)
+    }
   }
   
   private func setupConstraints() {
-    
+    categoryScrollView.snp.makeConstraints {
+      $0.top.leading.trailing.equalToSuperview()
+      $0.width.equalToSuperview()
+      $0.height.equalTo(56)
+    }
+    collectionView.snp.makeConstraints {
+      $0.top.equalTo(categoryScrollView.snp.bottom)
+      $0.leading.trailing.bottom.equalToSuperview()
+      $0.width.equalToSuperview()
+    }
+  }
+  
+  private func makeCategoryButton(_ list: [String]) {
+    let stackView = UIStackView().then {
+      $0.axis = .horizontal
+      $0.alignment = .center
+      $0.distribution = .equalSpacing
+      $0.spacing = 16
+    }
+    categoryScrollView.addSubview(stackView)
+    stackView.snp.makeConstraints {
+      $0.edges.height.equalToSuperview()
+    }
+    for str in list {
+      UIButton().do {
+        $0.setTitle("  \(str)  ", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 16)
+        stackView.addArrangedSubview($0)
+        $0.layer.cornerRadius = 16
+        $0.backgroundColor = .lightGray
+      }
+    }
   }
 }
 
@@ -72,8 +115,7 @@ extension GSCategoryView: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    <#code#>
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GSCategoryCollectionCell.id, for: indexPath)
+    return cell
   }
-  
-  
 }
