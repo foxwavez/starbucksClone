@@ -14,3 +14,10 @@ class GSViewSize {
   var navigationBarHeight: CGFloat = 0
   let segementHeight: CGFloat = 56
 }
+
+struct GiftDetailItem {
+  let image: UIImage
+  let title: String
+  let subtitle: String
+  let price: Int
+}
