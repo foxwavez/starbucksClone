@@ -22,6 +22,30 @@ class MainViewController: UIViewController {
     $0.textAlignment = .center
   }
   
+  private let rewardsButton = UIButton().then {
+    $0.setTitle("사막여우", for: .normal)
+  }
+  
+  private let cardButton = UIButton().then {
+    $0.setTitle("Card", for: .normal)
+  }
+  
+  private let sirenOrderButton = UIButton().then {
+    $0.setTitle("Siren Order", for: .normal)
+  }
+  
+  private let giftShopButton = UIButton().then {
+    $0.setTitle("Gift Shop", for: .normal)
+  }
+  
+  private let eCouponButton = UIButton().then {
+    $0.setTitle("e-Coupon", for: .normal)
+  }
+  
+  private let whatsNewButton = UIButton().then {
+    $0.setTitle("What's New", for: .normal)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
