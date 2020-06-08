@@ -18,6 +18,7 @@ class NotificationViewController: UIViewController {
     super.viewDidLoad()
     setupUI()
   }
+  
   private func setupUI() {
     view.backgroundColor = .systemBlue
   }

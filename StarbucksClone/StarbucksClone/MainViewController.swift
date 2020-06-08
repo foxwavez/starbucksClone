@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
   
   private func setupUI() {
     view.backgroundColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1)
-    [welcomeLabel].forEach {
+    [welcomeLabel, rewardsButton, cardButton].forEach {
       view.addSubview($0)
     }
   }
@@ -76,6 +76,16 @@ class MainViewController: UIViewController {
       $0.width.equalTo(guide)
       $0.height.equalTo(guide).multipliedBy(0.05)
       $0.centerX.equalTo(guide)
+    }
+    rewardsButton.snp.makeConstraints {
+      $0.top.equalTo(welcomeLabel.snp.bottom).offset(100)
+      $0.leading.equalTo(guide).offset(100)
+      $0.trailing.equalTo(cardButton.snp.leading)
+    }
+    cardButton.snp.makeConstraints {
+      $0.top.equalTo(welcomeLabel).offset(100)
+      $0.leading.equalTo(rewardsButton).offset(100)
+      $0.trailing.equalTo(guide)
     }
   }
   
