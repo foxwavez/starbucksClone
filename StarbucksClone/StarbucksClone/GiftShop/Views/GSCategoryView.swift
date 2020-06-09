@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct GSCategoryItem: Decodable {
-  var image: URL?
-  var title: String
-  var price: String
-}
-
 class GSCategoryView: UIView {
   
   // 상단 스크롤 뷰
@@ -43,9 +37,9 @@ class GSCategoryView: UIView {
   }
   
   private let categoryList: [String]
-  private let itemList: GSCategoryItem
+  private let itemList: GSCollectionItem
   
-  init(_ categoryList: [String], _ itemsByCategory: GSCategoryItem) {
+  init(_ categoryList: [String], _ itemsByCategory: GSCollectionItem) {
     self.categoryList = categoryList
     self.itemList = itemsByCategory
     super.init(frame: .zero)
