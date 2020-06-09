@@ -62,7 +62,7 @@ class GiftShopViewController: UIViewController {
   
   private func setupConstraints() {
     contentsView.snp.makeConstraints {
-      $0.edges.size.equalTo(view.safeAreaLayoutGuide)
+      $0.edges.size.equalToSuperview()
     }
   }
 }

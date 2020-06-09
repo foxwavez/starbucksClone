@@ -37,10 +37,27 @@ class GSGiftBoxView: UIView {
   }
   private lazy var boxScrollView = UIScrollView().then {
     $0.isScrollEnabled = false
-    $0.delegate = self
   }
-  private let getView = GSGetBoxView()
-  private let setView = GSSetBoxView()
+  private let getView = GSGiftListView(text:
+  """
+  선물 받은 e-Gift Item을
+  우측 상단 + 버튼을 눌러 등록해보세요.
+
+  등록하여 사용하시면,
+  사이렌 오더로 즉시 사용이 가능하며,
+  유효기간 만료 알림도 받으실 수 있어요.
+  """
+  )
+  private let setView = GSGiftListView(text:
+  """
+  사이렌 오더 '선물하기'를 통해
+  e-Gift Item을 선물해보세요.
+
+  나만의 퍼스널 옵션을 더해 선물하실 수 있으며,
+  스타벅스 카드로 결제하시면
+  Free extra 혜택을 받으실 수 있어요.
+  """
+  )
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -81,13 +98,13 @@ class GSGiftBoxView: UIView {
       $0.top.equalTo(getButton.snp.bottom).offset(12)
       $0.leading.trailing.bottom.equalToSuperview()
       $0.width.equalTo(self.snp.width)
-//      $0.height.equalTo(self.bounds.height - 12 - 12 - getButton.bounds.height)
     }
     getView.snp.makeConstraints {
-      $0.edges.size.equalToSuperview()
+      $0.top.leading.bottom.size.equalToSuperview()
     }
     setView.snp.makeConstraints {
-      $0.edges.size.equalToSuperview()
+      $0.leading.equalTo(getView.snp.trailing)
+      $0.top.trailing.bottom.size.equalToSuperview()
     }
   }
   @objc private func didTapButton(_ button: UIButton) {
@@ -109,8 +126,4 @@ class GSGiftBoxView: UIView {
       }
     }
   }
-}
-
-extension GSGiftBoxView: UIScrollViewDelegate {
-  
 }
