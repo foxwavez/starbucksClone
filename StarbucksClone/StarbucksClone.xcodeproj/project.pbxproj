@@ -26,6 +26,8 @@
 		A6D96626248104BF0066FFCB /* GSDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D96625248104BF0066FFCB /* GSDetailViewController.swift */; };
 		A6D96628248106C00066FFCB /* GSDetailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D96627248106C00066FFCB /* GSDetailItemView.swift */; };
 		A6DD2D51248F33A70000731C /* GSGiftBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DD2D50248F33A70000731C /* GSGiftBoxView.swift */; };
+		A6DD2D53248F3BFD0000731C /* GSGetBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DD2D52248F3BFD0000731C /* GSGetBoxView.swift */; };
+		A6DD2D55248F3C0A0000731C /* GSSetBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DD2D54248F3C0A0000731C /* GSSetBoxView.swift */; };
 		DE983158246336C000599581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE983157246336C000599581 /* AppDelegate.swift */; };
 		DE98315C246336C000599581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98315B246336C000599581 /* MainViewController.swift */; };
 		DE983161246336C000599581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE983160246336C000599581 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		A6D96625248104BF0066FFCB /* GSDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSDetailViewController.swift; sourceTree = "<group>"; };
 		A6D96627248106C00066FFCB /* GSDetailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSDetailItemView.swift; sourceTree = "<group>"; };
 		A6DD2D50248F33A70000731C /* GSGiftBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGiftBoxView.swift; sourceTree = "<group>"; };
+		A6DD2D52248F3BFD0000731C /* GSGetBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGetBoxView.swift; sourceTree = "<group>"; };
+		A6DD2D54248F3C0A0000731C /* GSSetBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSetBoxView.swift; sourceTree = "<group>"; };
 		DE983154246336C000599581 /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE983157246336C000599581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE98315B246336C000599581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				A6D96618247F81130066FFCB /* GSCategoryView.swift */,
 				A6D96627248106C00066FFCB /* GSDetailItemView.swift */,
 				A6DD2D50248F33A70000731C /* GSGiftBoxView.swift */,
+				A6DD2D54248F3C0A0000731C /* GSSetBoxView.swift */,
+				A6DD2D52248F3BFD0000731C /* GSGetBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			files = (
 				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
+				A6DD2D55248F3C0A0000731C /* GSSetBoxView.swift in Sources */,
 				A6D96626248104BF0066FFCB /* GSDetailViewController.swift in Sources */,
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
@@ -310,6 +317,7 @@
 				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
 				A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */,
 				A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */,
+				A6DD2D53248F3BFD0000731C /* GSGetBoxView.swift in Sources */,
 				A6D966222480D7750066FFCB /* GiftShopModel.swift in Sources */,
 				A6D96628248106C00066FFCB /* GSDetailItemView.swift in Sources */,
 				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
