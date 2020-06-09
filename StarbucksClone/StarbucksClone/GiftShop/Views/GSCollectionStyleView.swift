@@ -36,6 +36,7 @@ class GSCollectionStyleView: UIView {
   private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
     $0.backgroundColor = .white
     $0.dataSource = self
+    $0.delegate = self
     if items.count == 3 {
       $0.register(GSThemeCollectionCell.self, forCellWithReuseIdentifier: "cell")
     } else {
@@ -108,6 +109,23 @@ extension GSCollectionStyleView: UICollectionViewDataSource {
         cell.setItem(UIImage(named: "test")!)
       }
       return cell
+    }
+  }
+}
+
+extension GSCollectionStyleView: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? GSBestNewCollectionCell {
+      print(items[indexPath.row])
+    } else {
+      guard let vc = self.superview?.parentViewController?.navigationController else { return }
+      vc.pushViewController(GSThemeViewController(imageName: "test", data: [
+      GSCollectionItem(image: nil, title: "zzz", price: "1234"),
+      GSCollectionItem(image: nil, title: "zzz", price: "1234"),
+      GSCollectionItem(image: nil, title: "zzz", price: "1234"),
+      GSCollectionItem(image: nil, title: "zzz", price: "1234"),
+      GSCollectionItem(image: nil, title: "zzz", price: "1234")
+      ]), animated: true)
     }
   }
 }
