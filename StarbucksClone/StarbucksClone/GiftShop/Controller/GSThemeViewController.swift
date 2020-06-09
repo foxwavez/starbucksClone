@@ -15,7 +15,7 @@ class GSThemeViewController: UIViewController {
   }
   
   private lazy var layout = UICollectionViewFlowLayout().then {
-    $0.scrollDirection = .horizontal
+    $0.scrollDirection = .vertical
     $0.minimumInteritemSpacing = 0
     $0.minimumLineSpacing = 0
     $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -24,7 +24,7 @@ class GSThemeViewController: UIViewController {
   private lazy var itemCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
     $0.dataSource = self
     $0.delegate = self
-    $0.register(GSCategoryCollectionCell.self, forCellWithReuseIdentifier: GSCategoryCollectionCell.id)
+    $0.register(GSItemByCategoyrCollectionCell.self, forCellWithReuseIdentifier: GSItemByCategoyrCollectionCell.id)
     $0.isPagingEnabled = true
     $0.backgroundColor = .white
     $0.showsHorizontalScrollIndicator = false
@@ -45,6 +45,10 @@ class GSThemeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+  }
+  
+  override func viewWillLayoutSubviews() {
+    layout.itemSize = CGSize(width: view.bounds.width/2, height: 236)
   }
   
   private func setupUI() {
@@ -77,7 +81,8 @@ extension GSThemeViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GSCategoryCollectionCell.id, for: indexPath)
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GSItemByCategoyrCollectionCell.id, for: indexPath) as? GSItemByCategoyrCollectionCell else { return UICollectionViewCell() }
+    cell.configure(image: UIImage(named: "test")!, title: "테스터 나부랭이 두 줄 되나 어디 보자 ", price: "10,000원")
     return cell
   }
 }
