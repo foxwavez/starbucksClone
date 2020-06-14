@@ -21,3 +21,9 @@ struct GiftDetailItem {
   let subtitle: String
   let price: Int
 }
+
+struct GSCollectionItem: Decodable {
+  var image: URL?
+  var title: String
+  var price: String
+}
