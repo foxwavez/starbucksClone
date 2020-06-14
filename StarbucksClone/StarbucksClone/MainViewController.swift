@@ -22,28 +22,36 @@ class MainViewController: UIViewController {
     $0.textAlignment = .center
   }
   
+  private let userName = "사막여우"
+  
   private let rewardsButton = UIButton().then {
-    $0.setTitle("사막여우", for: .normal)
+//    $0.setTitle("사막여우", for: .normal)
+    $0.backgroundColor = .systemPink
   }
   
   private let cardButton = UIButton().then {
     $0.setTitle("Card", for: .normal)
+    $0.backgroundColor = .systemBlue
   }
   
   private let sirenOrderButton = UIButton().then {
     $0.setTitle("Siren Order", for: .normal)
+    $0.backgroundColor = .systemPink
   }
   
   private let giftShopButton = UIButton().then {
     $0.setTitle("Gift Shop", for: .normal)
+    $0.backgroundColor = .systemBlue
   }
   
   private let eCouponButton = UIButton().then {
     $0.setTitle("e-Coupon", for: .normal)
+    $0.backgroundColor = .systemPink
   }
   
   private let whatsNewButton = UIButton().then {
     $0.setTitle("What's New", for: .normal)
+    $0.backgroundColor = .systemBlue
   }
   
   override func viewDidLoad() {
@@ -55,7 +63,8 @@ class MainViewController: UIViewController {
   
   private func setupUI() {
     view.backgroundColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1)
-    [welcomeLabel, rewardsButton, cardButton].forEach {
+    rewardsButton.setTitle("\(userName)", for: .normal)
+    [welcomeLabel, rewardsButton, cardButton, sirenOrderButton, giftShopButton, eCouponButton, whatsNewButton].forEach {
       view.addSubview($0)
     }
   }
@@ -72,20 +81,44 @@ class MainViewController: UIViewController {
   private func setupLayout(){
     let guide = view.safeAreaLayoutGuide
     welcomeLabel.snp.makeConstraints {
-      $0.top.equalTo(guide)
-      $0.width.equalTo(guide)
+      $0.top.centerX.width.equalTo(guide)
       $0.height.equalTo(guide).multipliedBy(0.05)
-      $0.centerX.equalTo(guide)
     }
     rewardsButton.snp.makeConstraints {
       $0.top.equalTo(welcomeLabel.snp.bottom).offset(100)
-      $0.leading.equalTo(guide).offset(100)
+      $0.leading.equalTo(guide)
+      $0.width.equalTo(guide).dividedBy(2)
       $0.trailing.equalTo(cardButton.snp.leading)
     }
     cardButton.snp.makeConstraints {
-      $0.top.equalTo(welcomeLabel).offset(100)
-      $0.leading.equalTo(rewardsButton).offset(100)
+      $0.top.equalTo(welcomeLabel.snp.bottom).offset(100)
+      $0.leading.equalTo(rewardsButton.snp.trailing).offset(100)
+      $0.width.equalTo(guide).dividedBy(2)
       $0.trailing.equalTo(guide)
+    }
+    sirenOrderButton.snp.makeConstraints {
+      $0.top.equalTo(rewardsButton.snp.bottom).offset(100)
+      $0.leading.equalTo(guide)
+      $0.width.equalTo(guide).dividedBy(2)
+      $0.trailing.equalTo(giftShopButton.snp.leading)
+    }
+    giftShopButton.snp.makeConstraints {
+      $0.top.equalTo(cardButton.snp.bottom).offset(100)
+      $0.leading.equalTo(sirenOrderButton.snp.trailing)
+      $0.trailing.equalTo(guide)
+      $0.width.equalTo(guide).dividedBy(2)
+    }
+    eCouponButton.snp.makeConstraints {
+      $0.top.equalTo(sirenOrderButton.snp.bottom).offset(100)
+      $0.leading.equalTo(guide)
+      $0.trailing.equalTo(whatsNewButton.snp.leading)
+      $0.width.equalTo(guide).dividedBy(2)
+    }
+    whatsNewButton.snp.makeConstraints {
+      $0.top.equalTo(giftShopButton.snp.bottom).offset(100)
+      $0.leading.equalTo(eCouponButton.snp.trailing)
+      $0.trailing.equalTo(guide)
+      $0.width.equalTo(guide).dividedBy(2)
     }
   }
   
