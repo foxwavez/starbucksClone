@@ -55,6 +55,7 @@ class MenuDetailViewController: UIViewController {
     self.detailTableView.register(FifthOptionsTableViewCell.self, forCellReuseIdentifier: FifthOptionsTableViewCell.identifier)
     self.detailTableView.register(SixthOrderTableViewCell.self, forCellReuseIdentifier: SixthOrderTableViewCell.identifier)
     self.detailTableView.register(SeventhBasketTableViewCell.self, forCellReuseIdentifier: SeventhBasketTableViewCell.identifier)
+    self.detailTableView.register(SirenOrderMenuTableViewCell.self, forCellReuseIdentifier: SirenOrderMenuTableViewCell.identifier)
   }
   
   private func setupConstraints() {
@@ -111,6 +112,12 @@ extension MenuDetailViewController: UITableViewDataSource {
       cell.selectionStyle = .none
       cell.backgroundColor = .white
       return cell
+    case 7:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SirenOrderMenuTableViewCell.identifier, for: indexPath) as? SirenOrderMenuTableViewCell else { return UITableViewCell() }
+      cell.selectionStyle = .none
+      cell.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
+      cell.sectionTitleLabel.text = "비슷한 다른 메뉴"
+      return cell
     default:
       return UITableViewCell()
     }
@@ -135,6 +142,8 @@ extension MenuDetailViewController: UITableViewDelegate {
       return viewWidth / 7.5
     case 6:
       return viewWidth / 6
+    case 7:
+      return viewWidth / 1.8
     default:
       return 0
     }
