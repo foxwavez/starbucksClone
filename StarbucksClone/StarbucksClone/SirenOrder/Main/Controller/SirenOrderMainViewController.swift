@@ -10,6 +10,10 @@ import UIKit
 
 class SirenOrderMainViewController: UIViewController {
   
+  // MARK: Property
+  let sectionTitles = ["안나님을 위한 추천 메뉴", "새로 나온 메뉴", "함께 하면 좋은 푸드 메뉴"]
+  
+  // MARK: View
   private var sirenOrderTableView = UITableView().then {
     $0.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
     $0.showsVerticalScrollIndicator = false
@@ -115,6 +119,7 @@ extension SirenOrderMainViewController: UITableViewDataSource {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: SirenOrderMenuTableViewCell.identifier, for: indexPath) as? SirenOrderMenuTableViewCell else { return UITableViewCell() }
       cell.selectionStyle = .none
       cell.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
+      cell.delegate = self
       return cell
       case 2:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: SirenOrderMenuStoryTableViewCell.identifier, for: indexPath) as? SirenOrderMenuStoryTableViewCell else { return UITableViewCell() }
@@ -134,5 +139,13 @@ extension SirenOrderMainViewController: UITableViewDelegate {
     default:
       return 220
     }
+  }
+}
+
+// MARK:- SirenOrderTableViewProtocol
+extension SirenOrderMainViewController: SirenOrderTableViewProtocol {
+  func showDetailPage() {
+    let menuDetailVC = MenuDetailViewController()
+    navigationController?.pushViewController(menuDetailVC, animated: true)
   }
 }
