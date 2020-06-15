@@ -93,6 +93,17 @@ extension SirenOrderMainViewController: UITableViewDataSource {
     }
   }
   
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    switch section {
+    case 1:
+      let menuView = MenuSectionHeaderView()
+      return menuView
+    default:
+      return nil
+    }
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     switch indexPath.section {
     case 0:
