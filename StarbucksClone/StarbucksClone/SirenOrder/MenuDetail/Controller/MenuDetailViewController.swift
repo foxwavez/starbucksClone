@@ -81,6 +81,7 @@ extension MenuDetailViewController: UITableViewDataSource {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstBasicInformTableViewCell.identifier, for: indexPath) as? FirstBasicInformTableViewCell else { return UITableViewCell() }
       cell.selectionStyle = .none
       cell.backgroundColor = .white
+      cell.delegate = self
       return cell
     case 1:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: SecondTemperatureTableViewCell.identifier, for: indexPath) as? SecondTemperatureTableViewCell else { return UITableViewCell() }
@@ -147,5 +148,14 @@ extension MenuDetailViewController: UITableViewDelegate {
     default:
       return 0
     }
+  }
+}
+
+// MARK:- FirstBasicInformProtocol
+extension MenuDetailViewController: FirstBasicInformProtocol {
+  func popUpDetailView() {
+    let imageDetailVC = ImageDetailViewController()
+    imageDetailVC.modalPresentationStyle = .overCurrentContext
+    self.present(imageDetailVC, animated: false)
   }
 }
