@@ -14,6 +14,9 @@
 		9A0237B02497E57000A4F34E /* SirenOrderMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237AF2497E57000A4F34E /* SirenOrderMenuTableViewCell.swift */; };
 		9A0237B22497E77D00A4F34E /* SirenOrderMenuStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237B12497E77D00A4F34E /* SirenOrderMenuStoryTableViewCell.swift */; };
 		9A0237B42497E79200A4F34E /* SirenOrderMenuStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237B32497E79200A4F34E /* SirenOrderMenuStoryCollectionViewCell.swift */; };
+		9A0237B92497EC4300A4F34E /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237B82497EC4300A4F34E /* MenuDetailViewController.swift */; };
+		9A0237BD2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237BC2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift */; };
+		9A0237BF2497ECAD00A4F34E /* MenuImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237BE2497ECAD00A4F34E /* MenuImageButton.swift */; };
 		9A506149249747EB00C303B9 /* SirenOrderMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */; };
 		9A50614B2497484D00C303B9 /* TopBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */; };
 		9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */; };
@@ -52,6 +55,9 @@
 		9A0237AF2497E57000A4F34E /* SirenOrderMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMenuTableViewCell.swift; sourceTree = "<group>"; };
 		9A0237B12497E77D00A4F34E /* SirenOrderMenuStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMenuStoryTableViewCell.swift; sourceTree = "<group>"; };
 		9A0237B32497E79200A4F34E /* SirenOrderMenuStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMenuStoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A0237B82497EC4300A4F34E /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		9A0237BC2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBasicInformTableViewCell.swift; sourceTree = "<group>"; };
+		9A0237BE2497ECAD00A4F34E /* MenuImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageButton.swift; sourceTree = "<group>"; };
 		9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMainViewController.swift; sourceTree = "<group>"; };
 		9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,9 +102,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0237B52497EBFE00A4F34E /* MenuDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9A0237B62497EC0700A4F34E /* Views */,
+				9A0237B72497EC0C00A4F34E /* Controller */,
+			);
+			path = MenuDetail;
+			sourceTree = "<group>";
+		};
+		9A0237B62497EC0700A4F34E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A0237BB2497EC4D00A4F34E /* View */,
+				9A0237BA2497EC4800A4F34E /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A0237B72497EC0C00A4F34E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A0237B82497EC4300A4F34E /* MenuDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A0237BA2497EC4800A4F34E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A0237BC2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9A0237BB2497EC4D00A4F34E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A0237BE2497ECAD00A4F34E /* MenuImageButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9A50614224973CDD00C303B9 /* SirenOrder */ = {
 			isa = PBXGroup;
 			children = (
+				9A0237B52497EBFE00A4F34E /* MenuDetail */,
 				9A5061432497475E00C303B9 /* Main */,
 			);
 			path = SirenOrder;
@@ -374,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A0237BD2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift in Sources */,
 				9A0237B42497E79200A4F34E /* SirenOrderMenuStoryCollectionViewCell.swift in Sources */,
 				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
@@ -388,6 +438,7 @@
 				70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */,
 				DE983158246336C000599581 /* AppDelegate.swift in Sources */,
 				9A0237B22497E77D00A4F34E /* SirenOrderMenuStoryTableViewCell.swift in Sources */,
+				9A0237BF2497ECAD00A4F34E /* MenuImageButton.swift in Sources */,
 				A6D966202480CFB20066FFCB /* UIView+Extension.swift in Sources */,
 				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
 				A631E2D1248F4C4A00D59A63 /* GSThemeViewController.swift in Sources */,
@@ -401,6 +452,7 @@
 				A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */,
 				A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */,
 				A6D966222480D7750066FFCB /* GiftShopModel.swift in Sources */,
+				9A0237B92497EC4300A4F34E /* MenuDetailViewController.swift in Sources */,
 				A6D96628248106C00066FFCB /* GSDetailItemView.swift in Sources */,
 				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
 				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
