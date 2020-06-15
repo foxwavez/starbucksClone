@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol FifthOptionButtonProtocol: class {
+  func chooseSize()
+}
+
 class FifthOptionsTableViewCell: UITableViewCell {
   
   // MARK: Property
+  weak var delegate: FifthOptionButtonProtocol?
   static let identifier = "OptionButtons"
   
   // MARK: Views
@@ -55,9 +60,16 @@ class FifthOptionsTableViewCell: UITableViewCell {
   
   // MARK: Action
   @objc func didTapSizeButton(_ sender: UIButton) {
+    delegate?.chooseSize()
     print("사이즈버튼클릭")
   }
   @objc func didTapPersonalOptionButton(_ sender: UIButton) {
     print("퍼스널옵션버튼클릭")
+  }
+}
+// MARK:- MenuDetailProtocol
+extension FifthOptionsTableViewCell: MenuDetailProtocol {
+  func sendBackSizeData(data: String) {
+    self.sizeOptionButton.sizeLabel.text = data
   }
 }

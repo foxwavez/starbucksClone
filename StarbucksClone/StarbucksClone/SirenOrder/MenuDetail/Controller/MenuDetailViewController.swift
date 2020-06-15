@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol MenuDetailProtocol: class {
+  func sendBackSizeData(data: String)
+}
+
 class MenuDetailViewController: UIViewController {
+  
+  // MARK: Property
+  weak var delegate: MenuDetailProtocol?
   
   // MARK: Views
   private let detailTableView = UITableView().then {
@@ -102,6 +109,8 @@ extension MenuDetailViewController: UITableViewDataSource {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: FifthOptionsTableViewCell.identifier, for: indexPath) as? FifthOptionsTableViewCell else { return UITableViewCell() }
       cell.selectionStyle = .none
       cell.backgroundColor = .white
+      cell.delegate = self
+      self.delegate = cell
       return cell
     case 5:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: SixthOrderTableViewCell.identifier, for: indexPath) as? SixthOrderTableViewCell else { return UITableViewCell() }
@@ -157,5 +166,29 @@ extension MenuDetailViewController: FirstBasicInformProtocol {
     let imageDetailVC = ImageDetailViewController()
     imageDetailVC.modalPresentationStyle = .overCurrentContext
     self.present(imageDetailVC, animated: false)
+  }
+}
+// MARK:- FifthOptionButtonProtocol
+extension MenuDetailViewController: FifthOptionButtonProtocol {
+  func chooseSize() {
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let short = UIAlertAction(title: "Short", style: .default) { (action) in
+      self.delegate?.sendBackSizeData(data: action.title!)
+    }
+    let tall = UIAlertAction(title: "Tall", style: .default) { (action) in
+      self.delegate?.sendBackSizeData(data: action.title!)
+    }
+    let grande = UIAlertAction(title: "Grande", style: .default) { (action) in
+      self.delegate?.sendBackSizeData(data: action.title!)
+    }
+    let venti = UIAlertAction(title: "Venti", style: .default) { (action) in
+      self.delegate?.sendBackSizeData(data: action.title!)
+    }
+    let cancel = UIAlertAction(title: "취소", style: .cancel) { (action) in
+    }
+    [short, tall, grande, venti, cancel].forEach {
+      alert.addAction($0)
+    }
+    present(alert, animated: true)
   }
 }
