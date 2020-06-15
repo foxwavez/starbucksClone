@@ -127,6 +127,7 @@ extension MenuDetailViewController: UITableViewDataSource {
       cell.selectionStyle = .none
       cell.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
       cell.sectionTitleLabel.text = "비슷한 다른 메뉴"
+      cell.delegate = self
       return cell
     default:
       return UITableViewCell()
@@ -190,5 +191,12 @@ extension MenuDetailViewController: FifthOptionButtonProtocol {
       alert.addAction($0)
     }
     present(alert, animated: true)
+  }
+}
+// MARK:- SirenOrderTableViewProtocol
+extension MenuDetailViewController: SirenOrderTableViewProtocol {
+  func showDetailPage() {
+    let menuDetailVC = MenuDetailViewController()
+    navigationController?.pushViewController(menuDetailVC, animated: true)
   }
 }
