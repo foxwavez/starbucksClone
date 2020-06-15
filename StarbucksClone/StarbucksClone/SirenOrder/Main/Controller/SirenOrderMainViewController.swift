@@ -31,6 +31,25 @@ class SirenOrderMainViewController: UIViewController {
   private func setupAttributes() {
     view.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
     setupTableView()
+    setupNavigationBar()
+  }
+  
+  private func setupNavigationBar() {
+    title = "사이렌 오더"
+    navigationController?.navigationBar.tintColor = .white
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
+    
+    let searchBarButton = UIButton().then {
+      $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+      $0.imageView?.contentMode = .scaleToFill
+      $0.frame = CGRect(x: 10, y: 0, width: 10, height: 10)
+    }
+    let orderListButton = UIButton().then {
+      $0.setImage(UIImage(systemName: "bag"), for: .normal)
+      $0.imageView?.contentMode = .scaleToFill
+      $0.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+    }
+    navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: orderListButton), UIBarButtonItem(customView: searchBarButton)]
   }
   
   private func setupConstraints() {
