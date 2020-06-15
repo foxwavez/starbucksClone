@@ -19,6 +19,7 @@
 		9A0237BF2497ECAD00A4F34E /* MenuImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237BE2497ECAD00A4F34E /* MenuImageButton.swift */; };
 		9A0237C12497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237C02497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift */; };
 		9A0237C32497EF7E00A4F34E /* ThirdCupMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237C22497EF7E00A4F34E /* ThirdCupMessageTableViewCell.swift */; };
+		9A0237C52497F01B00A4F34E /* FourthChooseCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0237C42497F01B00A4F34E /* FourthChooseCupTableViewCell.swift */; };
 		9A506149249747EB00C303B9 /* SirenOrderMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */; };
 		9A50614B2497484D00C303B9 /* TopBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */; };
 		9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */; };
@@ -62,6 +63,7 @@
 		9A0237BE2497ECAD00A4F34E /* MenuImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageButton.swift; sourceTree = "<group>"; };
 		9A0237C02497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTemperatureTableViewCell.swift; sourceTree = "<group>"; };
 		9A0237C22497EF7E00A4F34E /* ThirdCupMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCupMessageTableViewCell.swift; sourceTree = "<group>"; };
+		9A0237C42497F01B00A4F34E /* FourthChooseCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthChooseCupTableViewCell.swift; sourceTree = "<group>"; };
 		9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMainViewController.swift; sourceTree = "<group>"; };
 		9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				9A0237BC2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift */,
 				9A0237C02497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift */,
 				9A0237C22497EF7E00A4F34E /* ThirdCupMessageTableViewCell.swift */,
+				9A0237C42497F01B00A4F34E /* FourthChooseCupTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
 				A6DD2D55248F3C0A0000731C /* GSGiftListView.swift in Sources */,
+				9A0237C52497F01B00A4F34E /* FourthChooseCupTableViewCell.swift in Sources */,
 				9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */,
 				A6D96626248104BF0066FFCB /* GSDetailViewController.swift in Sources */,
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
