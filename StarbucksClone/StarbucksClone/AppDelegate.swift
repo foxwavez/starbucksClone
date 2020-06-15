@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     let mainVC = UINavigationController(rootViewController:
-      GiftShopViewController()
+    SirenOrderMainViewController()
+    
+//    let mainVC = UINavigationController(rootViewController:
+//      GiftShopViewController()
 //    GSDetailViewController(seletedItem: GiftDetailItem(image: UIImage(named: "test")!, title: "테스트", subtitle: "이것은 테스트", price: 10000),
 //                           otherItems: [
 //                             [UIImage(named: "test")!: "무엇이냐1"],
