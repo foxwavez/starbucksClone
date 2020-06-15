@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuDetailViewController: UIViewController {
-
+  
   // MARK: Views
   private let detailTableView = UITableView().then {
     $0.separatorStyle = .none
@@ -49,11 +49,12 @@ class MenuDetailViewController: UIViewController {
     self.detailTableView.delegate = self
     self.detailTableView.dataSource = self
     self.detailTableView.register(FirstBasicInformTableViewCell.self, forCellReuseIdentifier: FirstBasicInformTableViewCell.identifier)
+    self.detailTableView.register(SecondTemperatureTableViewCell.self, forCellReuseIdentifier: SecondTemperatureTableViewCell.identifier)
   }
   
   private func setupConstraints() {
     let guide = view.safeAreaLayoutGuide
-
+    
     self.detailTableView.then { view.addSubview($0) }
       .snp.makeConstraints {
         $0.top.leading.trailing.bottom.equalTo(guide)
@@ -75,6 +76,11 @@ extension MenuDetailViewController: UITableViewDataSource {
       cell.selectionStyle = .none
       cell.backgroundColor = .white
       return cell
+    case 1:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SecondTemperatureTableViewCell.identifier, for: indexPath) as? SecondTemperatureTableViewCell else { return UITableViewCell() }
+      cell.selectionStyle = .none
+      cell.backgroundColor = .white
+      return cell
     default:
       return UITableViewCell()
     }
@@ -89,6 +95,8 @@ extension MenuDetailViewController: UITableViewDelegate {
     switch indexPath.row {
     case 0:
       return viewWidth / 2.5
+    case 1:
+      return viewWidth / 6
     default:
       return 0
     }
