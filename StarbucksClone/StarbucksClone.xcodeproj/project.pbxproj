@@ -10,6 +10,9 @@
 		200EE181AAE99268EEBC9406 /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2312E2CE6D6D6A966CE7F2E4 /* Pods_StarbucksClone.framework */; };
 		70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0C247EB0F200E106EA /* MenuViewController.swift */; };
 		70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */; };
+		9A506149249747EB00C303B9 /* SirenOrderMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */; };
+		9A50614B2497484D00C303B9 /* TopBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */; };
+		9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */; };
 		A631E2D1248F4C4A00D59A63 /* GSThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631E2D0248F4C4A00D59A63 /* GSThemeViewController.swift */; };
 		A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */; };
 		A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */; };
@@ -39,6 +42,9 @@
 		29C351D2FE81670C42DFE03A /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
 		70EF7A0C247EB0F200E106EA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		70EF7A0E247EBFC600E106EA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenOrderMainViewController.swift; sourceTree = "<group>"; };
+		9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerTableViewCell.swift; sourceTree = "<group>"; };
 		A631E2D0248F4C4A00D59A63 /* GSThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeViewController.swift; sourceTree = "<group>"; };
 		A6371539246BE65C00BA74C8 /* GiftShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftShopViewController.swift; sourceTree = "<group>"; };
 		A6371540246BED0B00BA74C8 /* GSSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSegmentControl.swift; sourceTree = "<group>"; };
@@ -78,6 +84,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A50614224973CDD00C303B9 /* SirenOrder */ = {
+			isa = PBXGroup;
+			children = (
+				9A5061432497475E00C303B9 /* Main */,
+			);
+			path = SirenOrder;
+			sourceTree = "<group>";
+		};
+		9A5061432497475E00C303B9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9A5061452497478000C303B9 /* Views */,
+				9A5061442497476700C303B9 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9A5061442497476700C303B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A506148249747EB00C303B9 /* SirenOrderMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A5061452497478000C303B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A5061472497479400C303B9 /* Cell */,
+				9A5061462497478A00C303B9 /* View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A5061462497478A00C303B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A5061472497479400C303B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A50614A2497484D00C303B9 /* TopBannerCollectionViewCell.swift */,
+				9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A08A240D97E076E38B6DF6B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +228,7 @@
 				DE983160246336C000599581 /* Assets.xcassets */,
 				DE983162246336C000599581 /* LaunchScreen.storyboard */,
 				DE983165246336C000599581 /* Info.plist */,
+				9A50614224973CDD00C303B9 /* SirenOrder */,
 				A637153B246BE66200BA74C8 /* GiftShop */,
 			);
 			path = StarbucksClone;
@@ -302,6 +359,7 @@
 				A6371541246BED0B00BA74C8 /* GSSegmentControl.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
 				A6DD2D55248F3C0A0000731C /* GSGiftListView.swift in Sources */,
+				9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */,
 				A6D96626248104BF0066FFCB /* GSDetailViewController.swift in Sources */,
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
@@ -313,6 +371,7 @@
 				A65FC7462472E806009CE4DA /* GSCollectionStyleView.swift in Sources */,
 				A631E2D1248F4C4A00D59A63 /* GSThemeViewController.swift in Sources */,
 				A6D9661B247F884E0066FFCB /* GSCategoryCollectionCell.swift in Sources */,
+				9A506149249747EB00C303B9 /* SirenOrderMainViewController.swift in Sources */,
 				A6D96619247F81130066FFCB /* GSCategoryView.swift in Sources */,
 				A65FC740247290B6009CE4DA /* GSBannerView.swift in Sources */,
 				A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */,
@@ -322,6 +381,7 @@
 				A6D96628248106C00066FFCB /* GSDetailItemView.swift in Sources */,
 				A65FC7492473F4A6009CE4DA /* GSBestNewCollectionCell.swift in Sources */,
 				A65FC74224729884009CE4DA /* GSTagButtonsView.swift in Sources */,
+				9A50614B2497484D00C303B9 /* TopBannerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
