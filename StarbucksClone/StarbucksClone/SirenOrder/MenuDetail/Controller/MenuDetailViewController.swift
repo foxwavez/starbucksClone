@@ -53,6 +53,7 @@ class MenuDetailViewController: UIViewController {
     self.detailTableView.register(ThirdCupMessageTableViewCell.self, forCellReuseIdentifier: ThirdCupMessageTableViewCell.identifier)
     self.detailTableView.register(FourthChooseCupTableViewCell.self, forCellReuseIdentifier: FourthChooseCupTableViewCell.identifier)
     self.detailTableView.register(FifthOptionsTableViewCell.self, forCellReuseIdentifier: FifthOptionsTableViewCell.identifier)
+    self.detailTableView.register(SixthOrderTableViewCell.self, forCellReuseIdentifier: SixthOrderTableViewCell.identifier)
   }
   
   private func setupConstraints() {
@@ -99,6 +100,11 @@ extension MenuDetailViewController: UITableViewDataSource {
       cell.selectionStyle = .none
       cell.backgroundColor = .white
       return cell
+    case 5:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SixthOrderTableViewCell.identifier, for: indexPath) as? SixthOrderTableViewCell else { return UITableViewCell() }
+      cell.selectionStyle = .none
+      cell.backgroundColor = .white
+      return cell
     default:
       return UITableViewCell()
     }
@@ -119,6 +125,8 @@ extension MenuDetailViewController: UITableViewDelegate {
       return viewWidth / 6
     case 3, 4:
       return viewWidth / 4.5
+    case 5:
+      return viewWidth / 7.5
     default:
       return 0
     }
