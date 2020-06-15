@@ -66,6 +66,7 @@ class SirenOrderMainViewController: UIViewController {
     self.sirenOrderTableView.delegate = self
     self.sirenOrderTableView.dataSource = self
     self.sirenOrderTableView.register(TopBannerTableViewCell.self, forCellReuseIdentifier: TopBannerTableViewCell.identifier)
+    self.sirenOrderTableView.register(SirenOrderMenuTableViewCell.self, forCellReuseIdentifier: SirenOrderMenuTableViewCell.identifier)
   }
 }
 
@@ -108,6 +109,11 @@ extension SirenOrderMainViewController: UITableViewDataSource {
     switch indexPath.section {
     case 0:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: TopBannerTableViewCell.identifier, for: indexPath) as? TopBannerTableViewCell else { return UITableViewCell() }
+      return cell
+      case 1:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SirenOrderMenuTableViewCell.identifier, for: indexPath) as? SirenOrderMenuTableViewCell else { return UITableViewCell() }
+      cell.selectionStyle = .none
+      cell.backgroundColor = #colorLiteral(red: 0.9161977768, green: 0.9009630084, blue: 0.8896496296, alpha: 1)
       return cell
     default:
       return UITableViewCell()
