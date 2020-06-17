@@ -62,7 +62,7 @@ class GiftShopViewController: UIViewController {
     GSViewSize.shared.navigationBarHeight = self.navigationController?.navigationBar.bounds.height ?? 0
     self.title = "Gift Shop"
     let cartBarButton =
-      UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: nil)
+      UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: #selector(didTapCart))
     cartBarButton.imageInsets = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 4)
     let searchBarButton =
       UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(didTapSearch))
@@ -85,6 +85,10 @@ class GiftShopViewController: UIViewController {
     let searcVC = GSSearchViewController()
     searcVC.modalPresentationStyle = .overFullScreen
     self.present(searcVC, animated: false)
+  }
+  
+  @objc private func didTapCart() {
+    self.navigationController?.pushViewController(GSCartViewController(), animated: true)
   }
   
 }

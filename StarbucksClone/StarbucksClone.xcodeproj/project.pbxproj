@@ -41,6 +41,7 @@
 		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
 		A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74C24764B73009CE4DA /* GSHomeView.swift */; };
 		A6C1300B2499CB46006F5FB7 /* GSSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */; };
+		A6C1300F249A0B20006F5FB7 /* GSCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */; };
 		A6D96619247F81130066FFCB /* GSCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D96618247F81130066FFCB /* GSCategoryView.swift */; };
 		A6D9661B247F884E0066FFCB /* GSCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */; };
 		A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9661D2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift */; };
@@ -92,6 +93,7 @@
 		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
 		A65FC74C24764B73009CE4DA /* GSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeView.swift; sourceTree = "<group>"; };
 		A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSearchViewController.swift; sourceTree = "<group>"; };
+		A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartViewController.swift; sourceTree = "<group>"; };
 		A6D96618247F81130066FFCB /* GSCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryView.swift; sourceTree = "<group>"; };
 		A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		A6D9661D2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSItemByCategoyrCollectionCell.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				A6D96625248104BF0066FFCB /* GSDetailViewController.swift */,
 				A631E2D0248F4C4A00D59A63 /* GSThemeViewController.swift */,
 				A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */,
+				A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */,
 				9A0237CD2497F21900A4F34E /* SixthOrderTableViewCell.swift in Sources */,
 				9A0237D12497F3CE00A4F34E /* ImageDetailViewController.swift in Sources */,
+				A6C1300F249A0B20006F5FB7 /* GSCartViewController.swift in Sources */,
 				9A0237C12497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift in Sources */,
 				A6D966222480D7750066FFCB /* GiftShopModel.swift in Sources */,
 				9A0237B92497EC4300A4F34E /* MenuDetailViewController.swift in Sources */,
