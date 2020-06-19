@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
     window = UIWindow(frame: UIScreen.main.bounds)
-    let mainVC = UINavigationController(rootViewController: SirenOrderMainViewController()
-    //let mainVC = UINavigationController(rootViewController: MenuDetailViewController()
+    let mainVC = UINavigationController(rootViewController: AllMenuViewController()
+      //let mainVC = UINavigationController(rootViewController: SirenOrderMainViewController()
+      //let mainVC = UINavigationController(rootViewController: MenuDetailViewController()
       
       
       //    let mainVC = UINavigationController(rootViewController:
