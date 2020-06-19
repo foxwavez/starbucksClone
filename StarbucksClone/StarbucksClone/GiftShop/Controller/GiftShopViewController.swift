@@ -38,9 +38,13 @@ class GiftShopViewController: UIViewController {
   
   private lazy var contentsView = GSSegmentControll([
     ["홈": GSHomeView(bannerData, tags: tagsData, best: bestData, theme: themeData, new: newData)],
-    ["카테고리": GSCategoryView(["추천", "전체", "감사", "Summer", "홈카페", "생일", "응원", "사랑", "1~2만원대선물", "우정", "결혼", "출산/돌"], GSCollectionItem(image: URL(string: ""), title: "테스트얌", price: "10000"))],
+    ["카테고리":
+      GSCategoryView(["추천", "전체", "감사", "Summer", "홈카페", "생일", "응원", "사랑", "1~2만원대선물", "우정", "결혼", "출산/돌"],
+      GSCollectionItem(image: URL(string: ""), title: "테스트얌", price: "10000"))
+    ],
     ["선물함": GSGiftBoxView()]
   ])
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,6 +60,11 @@ class GiftShopViewController: UIViewController {
   private func setupAttributes() {
     GSViewSize.shared.navigationBarHeight = self.navigationController?.navigationBar.bounds.height ?? 0
     self.title = "Gift Shop"
+    self.navigationItem.rightBarButtonItems = [
+      UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: nil),
+      UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(didTapSearch))
+    ]
+    
     view.backgroundColor = .white
     view.addSubview(contentsView)
   }
@@ -65,4 +74,11 @@ class GiftShopViewController: UIViewController {
       $0.edges.size.equalToSuperview()
     }
   }
+
+  @objc private func didTapSearch() {
+    let searcVC = GSSearchViewController()
+    searcVC.modalPresentationStyle = .overFullScreen
+    self.present(searcVC, animated: false)
+  }
+  
 }
