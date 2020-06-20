@@ -8,17 +8,20 @@
 
 import UIKit
 
+protocol TabMenuBarProtocol: class {
+  func changeSlideMenu(scrollTo index: Int)
+}
+
 class TabMenuBar: UIView {
   // MARK: Property
   
+  weak var delegate: TabMenuBarProtocol?
   private let viewWidth = UIScreen.main.bounds.width
   private let titles = ["음료", "푸드", "상품", "홀케이크 예약"]
   var indicatorViewLeadingConstraint: NSLayoutConstraint?
   var indicatorViewWidthConstraint: NSLayoutConstraint?
   private let cakeReservesize: CGFloat = UIScreen.main.bounds.width / 4 + 30
   private let restSize: CGFloat = (UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 4 + 30)) / 3
-  //  private let cakeReservesize: CGFloat = collectionView.frame.size.width / 4 + 30
-  //  private let restSize: CGFloat = (collectionView.frame.size.width - cakeReservesize) / 3
   
   // MARK: Views
   
@@ -81,7 +84,7 @@ class TabMenuBar: UIView {
     self.bottomLine.then { self.addSubview($0) }
       .snp.makeConstraints {
         $0.width.leading.bottom.equalToSuperview()
-        $0.height.equalTo(0.5)
+        $0.height.equalTo(1)
         $0.top.equalTo(indicatorView.snp.bottom)
     }
     
@@ -131,8 +134,8 @@ extension TabMenuBar: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? TabMenuCollectionViewCell else { return }
+    delegate?.changeSlideMenu(scrollTo: indexPath.item)
     cell.tabMenuLabel.textColor = #colorLiteral(red: 0.6079670787, green: 0.5307973623, blue: 0.3349733949, alpha: 1)
-    
     switch indexPath.item {
     case 3:
       self.indicatorViewLeadingConstraint?.constant = CGFloat(Int(restSize) * indexPath.item) + 5
@@ -149,5 +152,24 @@ extension TabMenuBar: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? TabMenuCollectionViewCell else { return }
     cell.tabMenuLabel.textColor = #colorLiteral(red: 0.4032030404, green: 0.3995964527, blue: 0.399479419, alpha: 1)
+  }
+}
+
+extension TabMenuBar: AllMenuVCProtocol {
+  func changeTabMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(item: index, section: 0)
+    self.tabMenuCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
+    
+    switch index {
+    case 3:
+      self.indicatorViewLeadingConstraint?.constant = CGFloat(Int(restSize) * index) + 5
+      self.indicatorViewWidthConstraint?.constant = cakeReservesize
+    default:
+      self.indicatorViewLeadingConstraint?.constant = CGFloat(Int(restSize) * index)
+      self.indicatorViewWidthConstraint?.constant = restSize
+    }
+    UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+      self.layoutIfNeeded()
+    }, completion: nil)
   }
 }

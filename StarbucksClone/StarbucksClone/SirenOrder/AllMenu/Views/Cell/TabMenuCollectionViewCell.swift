@@ -16,7 +16,7 @@ class TabMenuCollectionViewCell: UICollectionViewCell {
   
   var tabMenuLabel = UILabel().then {
     $0.textAlignment = .center
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    $0.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     $0.textColor = #colorLiteral(red: 0.4032030404, green: 0.3995964527, blue: 0.399479419, alpha: 1)
   }
   
