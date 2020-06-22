@@ -23,23 +23,36 @@ class GSCartViewController: UIViewController {
     $0.layer.borderWidth = 1
     $0.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
   }
-  
-  private let noticeLabel = UILabel().then {
+  private let emptyLabel = UILabel().then {
     $0.text = "상단의 '선물 추가하기'\n버튼을 눌러 구매하고 싶은 선물을 추가해보세요!"
     $0.textAlignment = .center
     $0.textColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
     $0.font = .systemFont(ofSize: 13)
     $0.numberOfLines = 0
   }
+  private let noticeLabel = UILabel().then {
+    $0.text = "담긴 선물은 2개월간 보관됩니다."
+    $0.textAlignment = .center
+    $0.textColor = #colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5176470588, alpha: 1)
+    $0.font = .systemFont(ofSize: 12)
+  }
+  private lazy var cartTableView = UITableView().then {
+    $0.dataSource = self
+    $0.register(GSCatrItemTableViewCell.self, forCellReuseIdentifier: GSCatrItemTableViewCell.id)
+    $0.tableFooterView = UIView()
+    $0.estimatedRowHeight = 90
+    $0.rowHeight = UITableView.automaticDimension
+  }
+  private let totalView = GSCartTotalPriceView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
   }
-
+  
   private func setupUI() {
     setupAttributes()
-    setupConstraints()
+    setupLayout()
   }
   
   private func setupAttributes() {
@@ -47,19 +60,48 @@ class GSCartViewController: UIViewController {
     self.navigationItem.rightBarButtonItem =
       UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
     view.backgroundColor = .white
-    [addButton, noticeLabel].forEach {
+    [cartTableView, addButton, noticeLabel, totalView].forEach {
       view.addSubview($0)
     }
   }
   
-  private func setupConstraints() {
+  private func setupLayout() {
+    cartTableView.snp.makeConstraints {
+      $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+    }
+    
     addButton.snp.makeConstraints {
-      $0.top.leading.equalToSuperview().offset(16)
+      $0.top.equalTo(cartTableView.snp.bottom).offset(16)
+      $0.leading.equalToSuperview().offset(16)
       $0.trailing.equalToSuperview().offset(-16)
       $0.height.equalTo(40)
     }
+    
     noticeLabel.snp.makeConstraints {
-      $0.center.equalTo(view.safeAreaLayoutGuide)
+      $0.top.equalTo(addButton.snp.bottom).offset(32)
+//      $0.bottom.equalToSuperview().offset(-32)
+      $0.centerX.equalToSuperview()
+    }
+    
+    totalView.snp.makeConstraints {
+      $0.bottom.trailing.leading.equalToSuperview()
+      $0.top.equalTo(noticeLabel.snp.bottom).offset(32)
+//      $0.height.equalTo(164)
     }
   }
+}
+
+extension GSCartViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    guard let cart = GSCartModel.shared.cart else { return 0 }
+    //    return cart.count
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: GSCatrItemTableViewCell.id, for: indexPath) as? GSCatrItemTableViewCell else { return UITableViewCell() }
+    cell.configure(image: UIImage(named: "test")!, title: "테스트", price: "20000")
+    return cell
+  }
+  
 }
