@@ -9,12 +9,16 @@
 import UIKit
 
 protocol AllMenuVCProtocol: class {
-  func changeTabMenu(scrollTo index: Int)
+  func changeMenu(scrollTo index: Int)
+  //func changeMenuBySlide(section: Int, index: Int)
 }
 
 class AllMenuViewController: UIViewController {
   
   weak var delegate: AllMenuVCProtocol?
+  weak var beverageDelegate: AllMenuVCProtocol?
+  weak var foodDelegate: AllMenuVCProtocol?
+  weak var goodsDelegate: AllMenuVCProtocol?
   
   // MARK: Views
   
@@ -146,12 +150,18 @@ extension AllMenuViewController: UICollectionViewDataSource {
       switch indexPath.item {
       case 0:
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideMenuBeverageCollectionViewCell.identifier, for: indexPath) as? SlideMenuBeverageCollectionViewCell else { return UICollectionViewCell() }
+        cell.delegate = self
+        self.beverageDelegate = cell
         return cell
       case 1:
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideMenuFoodCollectionViewCell.identifier, for: indexPath) as? SlideMenuFoodCollectionViewCell else { return UICollectionViewCell() }
+        cell.delegate = self
+        self.foodDelegate = cell
         return cell
       case 2:
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideMenuGoodsCollectionViewCell.identifier, for: indexPath) as? SlideMenuGoodsCollectionViewCell else { return UICollectionViewCell() }
+        cell.delegate = self
+        self.goodsDelegate = cell
         return cell
       default:
         return UICollectionViewCell()
@@ -191,9 +201,39 @@ extension AllMenuViewController: UICollectionViewDelegateFlowLayout {
   func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     if scrollView == slideMenuCollectionview {
       let itemAt = Int(targetContentOffset.pointee.x / view.frame.width)
-      delegate?.changeTabMenu(scrollTo: itemAt)
+      delegate?.changeMenu(scrollTo: itemAt)
+      self.listMenuCollectionview.scrollToItem(at: IndexPath(row: 0, section: itemAt), at: .centeredHorizontally, animated: true)
+    } else if scrollView == listMenuCollectionview {
+      let itemAt = Int(targetContentOffset.pointee.x / view.frame.width)
+      switch itemAt {
+      case 0...13:
+        print("음료")
+        // 탭 음료 선택
+        // slide 메뉴 이동!
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.slideMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        delegate?.changeMenu(scrollTo: 0)
+        
+        beverageDelegate?.changeMenu(scrollTo: itemAt)
+      case 14...22:
+        print("푸드")
+        let indexPath = IndexPath(row: 1, section: 0)
+        self.slideMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        let index = itemAt - 14
+        delegate?.changeMenu(scrollTo: 1)
+        foodDelegate?.changeMenu(scrollTo: index)
+      case 23...35:
+        print("상품")
+        delegate?.changeMenu(scrollTo: 2)
+        let indexPath = IndexPath(row: 2, section: 0)
+        self.slideMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        let index = itemAt - 23
+        goodsDelegate?.changeMenu(scrollTo: index)
+      default:
+        print("홀케이크예약")
+      }
     }
-    
   }
 }
 
@@ -204,5 +244,36 @@ extension AllMenuViewController: TabMenuBarProtocol {
       let indexPath = IndexPath(row: index, section: 0)
       self.slideMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
+  }
+  
+  func changeListMenu(scrollTo index: Int) {
+    if index != 3 {
+      let indexPath = IndexPath(row: 0, section: index)
+      self.listMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+  }
+}
+
+// MARK:- SlideMenuBeverageProtocol
+extension AllMenuViewController: SlideMenuBeverageProtocol {
+  func changeBeverageListMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 0)
+    self.listMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+  }
+}
+
+// MARK:- SlideMenuFoodProtocol
+extension AllMenuViewController: SlideMenuFoodProtocol {
+  func changeFoodListMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 1)
+    self.listMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+  }
+}
+
+// MARK:- SlideMenuGoodsProtocol
+extension AllMenuViewController: SlideMenuGoodsProtocol {
+  func changeGoodsListMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 2)
+    self.listMenuCollectionview.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
   }
 }

@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SlideMenuBeverageProtocol: class {
+  func changeBeverageListMenu(scrollTo index: Int)
+}
+
 class SlideMenuBeverageCollectionViewCell: UICollectionViewCell {
   
   // MARK: Property
+  weak var delegate: SlideMenuBeverageProtocol?
   static let identifier = "SlideMenuBeverate"
   private let titles = ["NEW", "추천", "콜드 브루", "리저브", "에스프레소", "디카페인 커피", "블론드", "프라푸치노", "블렌디드", "피지오", "티(티바나)", "브루드 커피", "기타", "병음료"]
   private let viewWidth = UIScreen.main.bounds.width
@@ -113,6 +118,8 @@ extension SlideMenuBeverageCollectionViewCell: UICollectionViewDelegateFlowLayou
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.changeBeverageListMenu(scrollTo: indexPath.item)
+    // 아래코드 엄청 중복됨!
     let endPoint = collectionView.contentSize.width - viewWidth
     // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
     
@@ -136,4 +143,37 @@ extension SlideMenuBeverageCollectionViewCell: UICollectionViewDelegateFlowLayou
     collectionView.setContentOffset(newOffset, animated: true)
     previousCell = indexPath.item
   }
+}
+
+// MARK:- AllMenuVCProtocol
+extension SlideMenuBeverageCollectionViewCell: AllMenuVCProtocol {
+  func changeMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 0)
+    self.beverageCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+    
+    let endPoint = beverageCollectionView.contentSize.width - viewWidth
+    // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
+    
+    var move: CGFloat = 0
+    if indexPath.item > previousCell {
+      move = 60
+    } else if indexPath.item < previousCell {
+      move = -60
+    }
+    
+    var newOffset = CGPoint(x: beverageCollectionView.contentOffset.x + move, y: beverageCollectionView.contentOffset.y)
+    
+    if newOffset.x < 0 {
+      // 맨 앞이면 더이상 움직이지 않게!
+      newOffset.x = 0
+    } else if newOffset.x > endPoint {
+      // 맨 끝이면 더이상 움직이지 않게!
+      newOffset.x = endPoint
+    }
+    
+    beverageCollectionView.setContentOffset(newOffset, animated: true)
+    previousCell = indexPath.item
+  }
+  
+  
 }

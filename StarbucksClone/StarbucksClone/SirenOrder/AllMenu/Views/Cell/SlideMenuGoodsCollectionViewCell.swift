@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol SlideMenuGoodsProtocol: class {
+  func changeGoodsListMenu(scrollTo index: Int)
+}
+
 class SlideMenuGoodsCollectionViewCell: UICollectionViewCell {
   // MARK: Property
+  weak var delegate: SlideMenuGoodsProtocol?
   static let identifier = "SlideMenuGoods"
   private let titles = ["New", "추천", "머그/글라스", "스테인리스텀블러", "플라스틱텀블러", "보온병", "액세서리", "커피용품", "원두", "오리가미", "비아", "패키지 티", "리저브 원두"]
   private let viewWidth = UIScreen.main.bounds.width
@@ -109,6 +114,7 @@ extension SlideMenuGoodsCollectionViewCell: UICollectionViewDelegateFlowLayout {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.changeGoodsListMenu(scrollTo: indexPath.item)
     let endPoint = collectionView.contentSize.width - viewWidth
     // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
     
@@ -134,3 +140,32 @@ extension SlideMenuGoodsCollectionViewCell: UICollectionViewDelegateFlowLayout {
   }
 }
 
+extension SlideMenuGoodsCollectionViewCell: AllMenuVCProtocol {
+  func changeMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 0)
+    self.goodsCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+    
+    let endPoint = goodsCollectionView.contentSize.width - viewWidth
+    // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
+    
+    var move: CGFloat = 0
+    if indexPath.item > previousCell {
+      move = 60
+    } else if indexPath.item < previousCell {
+      move = -60
+    }
+    
+    var newOffset = CGPoint(x: goodsCollectionView.contentOffset.x + move, y: goodsCollectionView.contentOffset.y)
+    
+    if newOffset.x < 0 {
+      // 맨 앞이면 더이상 움직이지 않게!
+      newOffset.x = 0
+    } else if newOffset.x > endPoint {
+      // 맨 끝이면 더이상 움직이지 않게!
+      newOffset.x = endPoint
+    }
+    
+    goodsCollectionView.setContentOffset(newOffset, animated: true)
+    previousCell = indexPath.item
+  }
+}

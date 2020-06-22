@@ -10,6 +10,7 @@ import UIKit
 
 protocol TabMenuBarProtocol: class {
   func changeSlideMenu(scrollTo index: Int)
+  func changeListMenu(scrollTo index: Int)
 }
 
 class TabMenuBar: UIView {
@@ -135,6 +136,7 @@ extension TabMenuBar: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? TabMenuCollectionViewCell else { return }
     delegate?.changeSlideMenu(scrollTo: indexPath.item)
+    delegate?.changeListMenu(scrollTo: indexPath.item)
     cell.tabMenuLabel.textColor = #colorLiteral(red: 0.6079670787, green: 0.5307973623, blue: 0.3349733949, alpha: 1)
     switch indexPath.item {
     case 3:
@@ -156,7 +158,7 @@ extension TabMenuBar: UICollectionViewDelegateFlowLayout {
 }
 
 extension TabMenuBar: AllMenuVCProtocol {
-  func changeTabMenu(scrollTo index: Int) {
+  func changeMenu(scrollTo index: Int) {
     let indexPath = IndexPath(item: index, section: 0)
     self.tabMenuCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
     

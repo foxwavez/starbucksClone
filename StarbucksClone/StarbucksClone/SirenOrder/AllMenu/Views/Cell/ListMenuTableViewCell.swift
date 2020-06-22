@@ -65,7 +65,7 @@ class ListMenuTableViewCell: UITableViewCell {
       .snp.makeConstraints {
         $0.top.leading.equalToSuperview().offset(margin * 1.5)
         $0.width.height.equalTo(70)
-        $0.bottom.equalToSuperview().offset(-margin * 1.5)
+        $0.bottom.equalToSuperview().offset(-margin * 1.5).priority(700)
     }
     self.titleLabel.then { self.contentView.addSubview($0) }
       .snp.makeConstraints {

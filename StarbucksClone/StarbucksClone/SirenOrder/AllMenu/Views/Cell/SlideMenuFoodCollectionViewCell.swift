@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SlideMenuFoodProtocol: class {
+  func changeFoodListMenu(scrollTo index: Int)
+}
+
 class SlideMenuFoodCollectionViewCell: UICollectionViewCell {
   
   // MARK: Property
+  weak var delegate: SlideMenuFoodProtocol?
   static let identifier = "SlideMenuFood"
   private let titles = ["New", "추천", "베이커리", "케이크", "샌드위치&샐러드", "따뜻한 푸드", "과일&요거트", "스낵&미니디저트", "아이스크림"]
   private let viewWidth = UIScreen.main.bounds.width
@@ -112,6 +117,7 @@ extension SlideMenuFoodCollectionViewCell: UICollectionViewDelegateFlowLayout {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.changeFoodListMenu(scrollTo: indexPath.item)
     let endPoint = collectionView.contentSize.width - viewWidth
     // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
     
@@ -134,5 +140,35 @@ extension SlideMenuFoodCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     collectionView.setContentOffset(newOffset, animated: true)
     previousCell = indexPath.item
+  }
+}
+
+extension SlideMenuFoodCollectionViewCell: AllMenuVCProtocol {
+  func changeMenu(scrollTo index: Int) {
+    let indexPath = IndexPath(row: index, section: 0)
+      self.foodCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+      
+      let endPoint = foodCollectionView.contentSize.width - viewWidth
+      // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
+      
+      var move: CGFloat = 0
+      if indexPath.item > previousCell {
+        move = 60
+      } else if indexPath.item < previousCell {
+        move = -60
+      }
+      
+      var newOffset = CGPoint(x: foodCollectionView.contentOffset.x + move, y: foodCollectionView.contentOffset.y)
+      
+      if newOffset.x < 0 {
+        // 맨 앞이면 더이상 움직이지 않게!
+        newOffset.x = 0
+      } else if newOffset.x > endPoint {
+        // 맨 끝이면 더이상 움직이지 않게!
+        newOffset.x = endPoint
+      }
+      
+      foodCollectionView.setContentOffset(newOffset, animated: true)
+      previousCell = indexPath.item
   }
 }
