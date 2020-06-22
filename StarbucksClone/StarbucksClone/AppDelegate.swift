@@ -13,19 +13,20 @@ import Kingfisher
 import SnapKit
 
 @UIApplicationMain
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
     window = UIWindow(frame: UIScreen.main.bounds)
+    //let mainVC = UINavigationController(rootViewController: AllMenuViewController()
     let mainVC = UINavigationController(rootViewController: SirenOrderMainViewController()
     //let mainVC = UINavigationController(rootViewController: MenuDetailViewController()
-      
-      
-      //    let mainVC = UINavigationController(rootViewController:
-      //      GiftShopViewController()
+    
+    
+    //let mainVC = UINavigationController(rootViewController: GiftShopViewController()
       //    GSDetailViewController(seletedItem: GiftDetailItem(image: UIImage(named: "test")!, title: "테스트", subtitle: "이것은 테스트", price: 10000),
       //                           otherItems: [
       //                             [UIImage(named: "test")!: "무엇이냐1"],
