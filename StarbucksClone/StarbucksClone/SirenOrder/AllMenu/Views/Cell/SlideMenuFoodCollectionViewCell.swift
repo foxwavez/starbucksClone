@@ -167,7 +167,6 @@ extension SlideMenuFoodCollectionViewCell: AllMenuVCProtocol {
         // 맨 끝이면 더이상 움직이지 않게!
         newOffset.x = endPoint
       }
-      
       foodCollectionView.setContentOffset(newOffset, animated: true)
       previousCell = indexPath.item
   }

@@ -104,6 +104,7 @@ extension SirenOrderMainViewController: UITableViewDataSource {
     switch section {
     case 1:
       let menuView = MenuSectionHeaderView()
+      menuView.delegate = self
       return menuView
     default:
       return nil
@@ -147,5 +148,13 @@ extension SirenOrderMainViewController: SirenOrderTableViewProtocol {
   func showDetailPage() {
     let menuDetailVC = MenuDetailViewController()
     navigationController?.pushViewController(menuDetailVC, animated: true)
+  }
+}
+
+// MARK:- MenuSectionHeaderProtocol
+extension SirenOrderMainViewController: MenuSectionHeaderProtocol {
+  func pushAllMenu() {
+    let allMenuVC = AllMenuViewController()
+    navigationController?.pushViewController(allMenuVC, animated: true)
   }
 }
