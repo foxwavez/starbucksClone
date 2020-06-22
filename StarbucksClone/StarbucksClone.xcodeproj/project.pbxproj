@@ -33,6 +33,9 @@
 		9A50614D2497486700C303B9 /* TopBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */; };
 		9A50614F2497509300C303B9 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50614E2497509300C303B9 /* MenuButton.swift */; };
 		9A506151249750C200C303B9 /* MenuSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A506150249750C200C303B9 /* MenuSectionHeaderView.swift */; };
+		A61234B6249DFCD9008CE215 /* GiftShopItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61234B5249DFCD9008CE215 /* GiftShopItemModel.swift */; };
+		A61234B8249E088C008CE215 /* GSCatrItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61234B7249E088C008CE215 /* GSCatrItemTableViewCell.swift */; };
+		A61234BA24A063CE008CE215 /* GSCartTotalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61234B924A063CE008CE215 /* GSCartTotalPriceView.swift */; };
 		9ADECD27249CEC49007BDA43 /* AllMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADECD26249CEC49007BDA43 /* AllMenuViewController.swift */; };
 		9ADECD29249D037C007BDA43 /* SlideMenuBeverageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADECD28249D037C007BDA43 /* SlideMenuBeverageCollectionViewCell.swift */; };
 		9ADECD2B249D0387007BDA43 /* SlideMenuFoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADECD2A249D0387007BDA43 /* SlideMenuFoodCollectionViewCell.swift */; };
@@ -50,6 +53,7 @@
 		A65FC74B247601CC009CE4DA /* GSThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */; };
 		A65FC74D24764B73009CE4DA /* GSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65FC74C24764B73009CE4DA /* GSHomeView.swift */; };
 		A6C1300B2499CB46006F5FB7 /* GSSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */; };
+		A6C1300F249A0B20006F5FB7 /* GSCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */; };
 		A6D96619247F81130066FFCB /* GSCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D96618247F81130066FFCB /* GSCategoryView.swift */; };
 		A6D9661B247F884E0066FFCB /* GSCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */; };
 		A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9661D2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift */; };
@@ -93,6 +97,9 @@
 		9A50614C2497486700C303B9 /* TopBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerTableViewCell.swift; sourceTree = "<group>"; };
 		9A50614E2497509300C303B9 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		9A506150249750C200C303B9 /* MenuSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderView.swift; sourceTree = "<group>"; };
+		A61234B5249DFCD9008CE215 /* GiftShopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftShopItemModel.swift; sourceTree = "<group>"; };
+		A61234B7249E088C008CE215 /* GSCatrItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCatrItemTableViewCell.swift; sourceTree = "<group>"; };
+		A61234B924A063CE008CE215 /* GSCartTotalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartTotalPriceView.swift; sourceTree = "<group>"; };
 		9ADECD26249CEC49007BDA43 /* AllMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenuViewController.swift; sourceTree = "<group>"; };
 		9ADECD28249D037C007BDA43 /* SlideMenuBeverageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuBeverageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9ADECD2A249D0387007BDA43 /* SlideMenuFoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuFoodCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +117,7 @@
 		A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSThemeCollectionCell.swift; sourceTree = "<group>"; };
 		A65FC74C24764B73009CE4DA /* GSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeView.swift; sourceTree = "<group>"; };
 		A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSSearchViewController.swift; sourceTree = "<group>"; };
+		A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartViewController.swift; sourceTree = "<group>"; };
 		A6D96618247F81130066FFCB /* GSCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryView.swift; sourceTree = "<group>"; };
 		A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		A6D9661D2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSItemByCategoyrCollectionCell.swift; sourceTree = "<group>"; };
@@ -330,6 +338,7 @@
 				A6D96627248106C00066FFCB /* GSDetailItemView.swift */,
 				A6DD2D50248F33A70000731C /* GSGiftBoxView.swift */,
 				A6DD2D54248F3C0A0000731C /* GSGiftListView.swift */,
+				A61234B924A063CE008CE215 /* GSCartTotalPriceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D966212480D7750066FFCB /* GiftShopModel.swift */,
+				A61234B5249DFCD9008CE215 /* GiftShopItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 				A6D96625248104BF0066FFCB /* GSDetailViewController.swift */,
 				A631E2D0248F4C4A00D59A63 /* GSThemeViewController.swift */,
 				A6C1300A2499CB46006F5FB7 /* GSSearchViewController.swift */,
+				A6C1300E249A0B20006F5FB7 /* GSCartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 				A65FC74A247601CC009CE4DA /* GSThemeCollectionCell.swift */,
 				A6D9661A247F884E0066FFCB /* GSCategoryCollectionCell.swift */,
 				A6D9661D2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift */,
+				A61234B7249E088C008CE215 /* GSCatrItemTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -521,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0237BD2497EC7000A4F34E /* FirstBasicInformTableViewCell.swift in Sources */,
+				A61234B6249DFCD9008CE215 /* GiftShopItemModel.swift in Sources */,
 				9A181302249A466800062F49 /* TabMenuCollectionViewCell.swift in Sources */,
 				9A0237B42497E79200A4F34E /* SirenOrderMenuStoryCollectionViewCell.swift in Sources */,
 				9ADECD2B249D0387007BDA43 /* SlideMenuFoodCollectionViewCell.swift in Sources */,
@@ -535,9 +548,11 @@
 				A6D96626248104BF0066FFCB /* GSDetailViewController.swift in Sources */,
 				A637153A246BE65C00BA74C8 /* GiftShopViewController.swift in Sources */,
 				DE98315C246336C000599581 /* MainViewController.swift in Sources */,
+				A61234B8249E088C008CE215 /* GSCatrItemTableViewCell.swift in Sources */,
 				70EF7A0D247EB0F200E106EA /* MenuViewController.swift in Sources */,
 				9A0237C32497EF7E00A4F34E /* ThirdCupMessageTableViewCell.swift in Sources */,
 				9A506151249750C200C303B9 /* MenuSectionHeaderView.swift in Sources */,
+				A61234BA24A063CE008CE215 /* GSCartTotalPriceView.swift in Sources */,
 				A6DD2D51248F33A70000731C /* GSGiftBoxView.swift in Sources */,
 				70EF7A0F247EBFC600E106EA /* NotificationViewController.swift in Sources */,
 				9A0237CF2497F2B900A4F34E /* SeventhBasketTableViewCell.swift in Sources */,
@@ -563,6 +578,7 @@
 				A6D9661E2480B35A0066FFCB /* GSItemByCategoyrCollectionCell.swift in Sources */,
 				9A0237CD2497F21900A4F34E /* SixthOrderTableViewCell.swift in Sources */,
 				9A0237D12497F3CE00A4F34E /* ImageDetailViewController.swift in Sources */,
+				A6C1300F249A0B20006F5FB7 /* GSCartViewController.swift in Sources */,
 				9A0237C12497EEDC00A4F34E /* SecondTemperatureTableViewCell.swift in Sources */,
 				A6D966222480D7750066FFCB /* GiftShopModel.swift in Sources */,
 				9A0237B92497EC4300A4F34E /* MenuDetailViewController.swift in Sources */,
