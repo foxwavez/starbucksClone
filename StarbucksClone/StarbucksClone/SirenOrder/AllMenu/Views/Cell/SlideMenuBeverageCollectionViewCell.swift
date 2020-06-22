@@ -67,7 +67,6 @@ class SlideMenuBeverageCollectionViewCell: UICollectionViewCell {
   }
   
   private func setupConstraints() {
-    let margin: CGFloat = 20
     self.beverageCollectionView.then { self.contentView.addSubview($0) }
       .snp.makeConstraints {
         $0.centerY.equalToSuperview()
@@ -119,7 +118,7 @@ extension SlideMenuBeverageCollectionViewCell: UICollectionViewDelegateFlowLayou
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     delegate?.changeBeverageListMenu(scrollTo: indexPath.item)
-    // 아래코드 엄청 중복됨!
+    // 아래코드 엄청 중복됨 수정하기!
     let endPoint = collectionView.contentSize.width - viewWidth
     // -viewWidth를 해주는 이유는 화면시작점의 contentOffset.x를 알고 싶으니까. size는 화면 끝까지의 길이가 나옴
     

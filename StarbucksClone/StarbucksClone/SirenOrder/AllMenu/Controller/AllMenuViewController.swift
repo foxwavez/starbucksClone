@@ -10,7 +10,6 @@ import UIKit
 
 protocol AllMenuVCProtocol: class {
   func changeMenu(scrollTo index: Int)
-  //func changeMenuBySlide(section: Int, index: Int)
 }
 
 class AllMenuViewController: UIViewController {
@@ -179,11 +178,8 @@ extension AllMenuViewController: UICollectionViewDelegateFlowLayout {
     if collectionView == slideMenuCollectionview {
       return CGSize(width: view.frame.width, height: 60)
     } else {
-      //et heightSize = view.frame.height - tabMenuBar.frame.height - slideMenuCollectionview.frame.height
-      //return CGSize(width: view.frame.width, height: heightSize)
       return CGSize(width: view.frame.width, height: self.listMenuCollectionview.frame.height)
     }
-    
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

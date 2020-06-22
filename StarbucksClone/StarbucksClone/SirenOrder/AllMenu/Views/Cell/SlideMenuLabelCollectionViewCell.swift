@@ -51,7 +51,6 @@ class SlideMenuLabelCollectionViewCell: UICollectionViewCell {
       .snp.makeConstraints {
         $0.centerX.centerY.equalToSuperview()
         $0.width.height.equalToSuperview()
-        //$0.height.equalTo(21)
     }
   }
   
