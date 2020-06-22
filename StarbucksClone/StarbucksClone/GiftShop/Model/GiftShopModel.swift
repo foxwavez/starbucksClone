@@ -10,20 +10,13 @@ import UIKit
 
 class GSViewSize {
   static let shared = GSViewSize()
-  
   var navigationBarHeight: CGFloat = 0
   let segementHeight: CGFloat = 56
 }
 
-struct GiftDetailItem {
-  let image: UIImage
-  let title: String
-  let subtitle: String
-  let price: Int
+class GSCartModel {
+  static let shared = GSCartModel()
+  
+  var cart: [String]? = [""]
 }
 
-struct GSCollectionItem: Decodable {
-  var image: URL?
-  var title: String
-  var price: String
-}
