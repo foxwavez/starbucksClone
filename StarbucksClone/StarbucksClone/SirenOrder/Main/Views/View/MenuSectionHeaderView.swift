@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol MenuSectionHeaderProtocol: class {
+  func pushAllMenu()
+}
+
 class MenuSectionHeaderView: UIView {
+  
+  weak var delegate: MenuSectionHeaderProtocol?
+  
   // MARK: Views
   
   private let backView = UIView().then {
@@ -102,6 +109,7 @@ class MenuSectionHeaderView: UIView {
     switch sender {
     case allMenuButton:
       print("전체 메뉴")
+      delegate?.pushAllMenu()
     case myMenuButton:
       print("나만의 메뉴")
     case historyButton:

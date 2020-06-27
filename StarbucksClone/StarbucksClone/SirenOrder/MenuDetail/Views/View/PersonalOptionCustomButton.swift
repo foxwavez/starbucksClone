@@ -9,6 +9,7 @@
 import UIKit
 
 class PersonalOptionCustomButton: UIButton {
+  
   // MARK: Views
   private let personalOptionLabel = UILabel().then {
     $0.text = "퍼스널 옵션"
